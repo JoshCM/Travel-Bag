@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kjx-A4-2g1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entry View Controller-->
+        <scene sceneID="rAv-lR-VKQ">
+            <objects>
+                <viewController id="kjx-A4-2g1" customClass="EntryViewController" customModule="TravelBag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dLZ-5r-qRi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-UT-7ld">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="gpY-qy-CSV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFw-Ad-XJV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="DiL-DM-b8w"/>
+                                </constraints>
+                                <state key="normal" title="Upload image"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SBn-NE-wrV">
+                                <rect key="frame" x="16" y="227" width="48.5" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V64-cF-r56">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTt-hH-zfM">
+                                        <rect key="frame" x="0.0" y="23" width="48.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Id-Fc-jgk">
+                                <rect key="frame" x="319" y="617" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AD-zb-E5X">
+                                <rect key="frame" x="16" y="300" width="343" height="186"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Mc3-vM-WLb"/>
+                                    <constraint firstAttribute="height" constant="186" id="wFE-ZG-fmG"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-T4-LLZ">
+                                <rect key="frame" x="25" y="617" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="wd4-nV-3BQ" kind="unwind" unwindAction="didUnwindFromEntry:" id="9DF-m1-BO1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qFw-Ad-XJV" firstAttribute="top" secondItem="dLZ-5r-qRi" secondAttribute="top" id="5Ui-CK-02J"/>
+                            <constraint firstItem="ho4-J7-vVd" firstAttribute="bottom" secondItem="7Id-Fc-jgk" secondAttribute="bottom" constant="20" id="Gwh-Px-LEh"/>
+                            <constraint firstItem="ltd-T4-LLZ" firstAttribute="leading" secondItem="ho4-J7-vVd" secondAttribute="leading" constant="25" id="MWd-2C-GHY"/>
+                            <constraint firstItem="XfT-UT-7ld" firstAttribute="leading" secondItem="ho4-J7-vVd" secondAttribute="leading" id="NNx-Hx-xnu"/>
+                            <constraint firstItem="SBn-NE-wrV" firstAttribute="top" secondItem="XfT-UT-7ld" secondAttribute="bottom" constant="28" id="NW0-jJ-esC"/>
+                            <constraint firstItem="6AD-zb-E5X" firstAttribute="top" secondItem="SBn-NE-wrV" secondAttribute="bottom" constant="34" id="OEC-ob-Vsl"/>
+                            <constraint firstItem="XfT-UT-7ld" firstAttribute="top" secondItem="dLZ-5r-qRi" secondAttribute="top" id="SuT-vJ-WsV"/>
+                            <constraint firstItem="ho4-J7-vVd" firstAttribute="bottom" secondItem="ltd-T4-LLZ" secondAttribute="bottom" constant="20" id="UPC-rw-Ep8"/>
+                            <constraint firstItem="6AD-zb-E5X" firstAttribute="centerX" secondItem="dLZ-5r-qRi" secondAttribute="centerX" id="Xcq-59-XOg"/>
+                            <constraint firstItem="qFw-Ad-XJV" firstAttribute="trailing" secondItem="ho4-J7-vVd" secondAttribute="trailing" id="af6-DN-Nj8"/>
+                            <constraint firstItem="XfT-UT-7ld" firstAttribute="trailing" secondItem="ho4-J7-vVd" secondAttribute="trailing" id="doa-PM-4Mo"/>
+                            <constraint firstItem="SBn-NE-wrV" firstAttribute="leading" secondItem="ho4-J7-vVd" secondAttribute="leading" constant="16" id="f1d-by-RPi"/>
+                            <constraint firstItem="ho4-J7-vVd" firstAttribute="trailing" secondItem="7Id-Fc-jgk" secondAttribute="trailing" constant="22" id="tMA-MG-cLq"/>
+                            <constraint firstItem="qFw-Ad-XJV" firstAttribute="leading" secondItem="ho4-J7-vVd" secondAttribute="leading" id="vQh-my-mbo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ho4-J7-vVd"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityName" destination="V64-cF-r56" id="ott-De-iCS"/>
+                        <outlet property="countryName" destination="XTt-hH-zfM" id="vA8-of-T80"/>
+                        <outlet property="descriptionField" destination="6AD-zb-E5X" id="mZN-d8-ZB6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvy-rV-hcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wd4-nV-3BQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo-camera" width="512" height="512"/>
+    </resources>
+</document>

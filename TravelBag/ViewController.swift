@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+    }
     @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
     }
     
