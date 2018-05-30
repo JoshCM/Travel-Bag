@@ -15,6 +15,7 @@
 		CA9AAFCC20BE94430014F6CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */; };
 		CA9AAFD720BE94430014F6CF /* TravelBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFD620BE94430014F6CF /* TravelBagTests.swift */; };
 		CA9AAFE220BE94430014F6CF /* TravelBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFE120BE94430014F6CF /* TravelBagUITests.swift */; };
+		CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFEF20BE9D650014F6CF /* Marker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CA9AAFDD20BE94430014F6CF /* TravelBagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelBagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9AAFE120BE94430014F6CF /* TravelBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBagUITests.swift; sourceTree = "<group>"; };
 		CA9AAFE320BE94430014F6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9AAFEF20BE9D650014F6CF /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		CA9AAFBD20BE94430014F6CF /* TravelBag */ = {
 			isa = PBXGroup;
 			children = (
+				CA9AAFF120BE9E030014F6CF /* Models */,
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
 				CA9AAFC020BE94430014F6CF /* ViewController.swift */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				CA9AAFE320BE94430014F6CF /* Info.plist */,
 			);
 			path = TravelBagUITests;
+			sourceTree = "<group>";
+		};
+		CA9AAFF120BE9E030014F6CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA9AAFEF20BE9D650014F6CF /* Marker.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			files = (
 				CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */,
 				CA9AAFC720BE94430014F6CF /* TravelBag.xcdatamodeld in Sources */,
+				CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */,
 				CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
