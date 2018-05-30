@@ -16,6 +16,8 @@
 		CA9AAFD720BE94430014F6CF /* TravelBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFD620BE94430014F6CF /* TravelBagTests.swift */; };
 		CA9AAFE220BE94430014F6CF /* TravelBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFE120BE94430014F6CF /* TravelBagUITests.swift */; };
 		CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFEF20BE9D650014F6CF /* Marker.swift */; };
+		CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */; };
+		CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFF920BECEE60014F6CF /* Entry.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		CA9AAFE120BE94430014F6CF /* TravelBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBagUITests.swift; sourceTree = "<group>"; };
 		CA9AAFE320BE94430014F6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA9AAFEF20BE9D650014F6CF /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		CA9AAFF920BECEE60014F6CF /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 				CA9AAFF120BE9E030014F6CF /* Models */,
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
 				CA9AAFC020BE94430014F6CF /* ViewController.swift */,
+				CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
+				CA9AAFF920BECEE60014F6CF /* Entry.storyboard */,
 				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
 				CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */,
 				CA9AAFCD20BE94430014F6CF /* Info.plist */,
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9AAFCC20BE94430014F6CF /* LaunchScreen.storyboard in Resources */,
+				CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */,
 				CA9AAFC920BE94430014F6CF /* Assets.xcassets in Resources */,
 				CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */,
 			);
@@ -274,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */,
+				CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */,
 				CA9AAFC720BE94430014F6CF /* TravelBag.xcdatamodeld in Sources */,
 				CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */,
 				CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */,

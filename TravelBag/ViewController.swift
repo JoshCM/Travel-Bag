@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var regionRadius :CLLocationDistance?
     let initLoc = CLLocation(latitude: 50.095845, longitude:8.218644)
     var actLoc : CLLocation!
+    var actCountry: String?
+    var actCity: String?
     
     func centerMaponLocation(location:CLLocation){
         let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius!, regionRadius!)
@@ -32,6 +34,8 @@ class ViewController: UIViewController {
             
             if let placemarks = placemarks, placemarks.count > 0 {
                 location = placemarks.first?.location
+                self.actCountry = placemarks.first?.country
+                self.actCity = placemarks.first?.locality
             }
             
             if let location = location {
@@ -44,6 +48,25 @@ class ViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
+    }
+    
+    @IBAction func addEntryButton(_ sender: Any) {
+        performSegue(withIdentifier: "addEntry", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is EntryViewController
+        {
+            let evc = segue.destination as? EntryViewController
+            evc?.country = actCountry!
+            evc?.city = actCity!
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.isRotateEnabled = false
