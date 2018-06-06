@@ -50,8 +50,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.edges == .left{
+            print("hallöle")
+        }
     }
     @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
+    }
+    @IBAction func tapToCityTableView(_ sender: Any) {
+        performSegue(withIdentifier: "cityTable", sender: nil)
     }
     
     @IBAction func addEntryButton(_ sender: Any) {
