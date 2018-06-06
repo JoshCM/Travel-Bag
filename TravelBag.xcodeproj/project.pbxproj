@@ -13,8 +13,8 @@
 		424A9F1120C7E75900243973 /* CatEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F0B20C7E75900243973 /* CatEntry+CoreDataProperties.swift */; };
 		424A9F1220C7E75900243973 /* CityEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F0C20C7E75900243973 /* CityEntry+CoreDataClass.swift */; };
 		424A9F1320C7E75900243973 /* CityEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F0D20C7E75900243973 /* CityEntry+CoreDataProperties.swift */; };
-		424A9F1520C7FDBC00243973 /* CityTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424A9F1420C7FDBC00243973 /* CityTable.storyboard */; };
 		424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F1620C7FED500243973 /* CityTableViewController.swift */; };
+		CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA18955120C81BDE00C75AA3 /* CityTable.storyboard */; };
 		CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */; };
 		CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFC020BE94430014F6CF /* ViewController.swift */; };
 		CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFC220BE94430014F6CF /* Main.storyboard */; };
@@ -26,6 +26,7 @@
 		CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFEF20BE9D650014F6CF /* Marker.swift */; };
 		CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */; };
 		CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFF920BECEE60014F6CF /* Entry.storyboard */; };
+		CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +53,8 @@
 		424A9F0B20C7E75900243973 /* CatEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		424A9F0C20C7E75900243973 /* CityEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		424A9F0D20C7E75900243973 /* CityEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		424A9F1420C7FDBC00243973 /* CityTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityTable.storyboard; sourceTree = "<group>"; };
 		424A9F1620C7FED500243973 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		CA18955220C81BDE00C75AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TravelBag/Base.lproj/CityTable.storyboard; sourceTree = "<group>"; };
 		CA9AAFBB20BE94430014F6CF /* TravelBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9AAFC020BE94430014F6CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		CA9AAFEF20BE9D650014F6CF /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		CA9AAFF920BECEE60014F6CF /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
+		CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,8 @@
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
 				CA9AAFF920BECEE60014F6CF /* Entry.storyboard */,
-				424A9F1420C7FDBC00243973 /* CityTable.storyboard */,
+				CA18955120C81BDE00C75AA3 /* CityTable.storyboard */,
+				CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */,
 				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
 				CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */,
 				CA9AAFCD20BE94430014F6CF /* Info.plist */,
@@ -288,7 +291,7 @@
 				CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */,
 				CA9AAFC920BE94430014F6CF /* Assets.xcassets in Resources */,
 				CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */,
-				424A9F1520C7FDBC00243973 /* CityTable.storyboard in Resources */,
+				CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +324,7 @@
 				CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */,
 				CA9AAFC720BE94430014F6CF /* TravelBag.xcdatamodeld in Sources */,
 				424A9F1020C7E75900243973 /* CatEntry+CoreDataClass.swift in Sources */,
+				CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */,
 				424A9F1220C7E75900243973 /* CityEntry+CoreDataClass.swift in Sources */,
 				CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */,
 				424A9F1320C7E75900243973 /* CityEntry+CoreDataProperties.swift in Sources */,
@@ -360,6 +364,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CA18955120C81BDE00C75AA3 /* CityTable.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA18955220C81BDE00C75AA3 /* Base */,
+			);
+			name = CityTable.storyboard;
+			sourceTree = "<group>";
+		};
 		CA9AAFC220BE94430014F6CF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import CoreData
 
-class CityTableViewController: UIViewController {
+class CityTableViewController: UITableViewController {
+    var cities:[CityEntry]!
+    let context = AppDelegate.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCityEntries()
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func loadCityEntries(){
+        let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
+        do{
+            try cities = context.fetch(fetchRequest) as [CityEntry]
+        }catch{
+            fatalError("Laden hat nicht so geklappt")
+        }
+        
+        for city in cities{
+            print(city.name)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

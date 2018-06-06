@@ -58,7 +58,7 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         if (imageChanged){
             city.image = UIImagePNGRepresentation(imageView.image!) as NSData?
         }
-        print("gesavt")
+        try? context.save()
         
         
         
@@ -66,7 +66,6 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBAction func imageTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker,animated: true,completion: nil)
-        print("Hallo")
     }
     
     override func didReceiveMemoryWarning() {

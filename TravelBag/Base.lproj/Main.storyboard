@@ -84,20 +84,12 @@
                         <outlet property="mapView" destination="1vD-lX-sAo" id="lXO-kr-agC"/>
                         <outlet property="searchField" destination="RN2-EU-59a" id="Lm1-ij-DbU"/>
                         <segue destination="QPQ-NU-RDv" kind="show" identifier="addEntry" id="Qpa-5b-dea"/>
-                        <segue destination="iR7-oB-N5X" kind="show" identifier="cityTable" id="dbl-b3-FRq"/>
+                        <segue destination="DMm-3n-pXo" kind="show" identifier="cityTable" id="HzV-qv-wzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-98.400000000000006" y="118.29085457271366"/>
-        </scene>
-        <!--CityTable-->
-        <scene sceneID="hQK-40-R9h">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CityTable" id="iR7-oB-N5X" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E4B-cc-avD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-98" y="743"/>
         </scene>
         <!--Entry-->
         <scene sceneID="DCn-CL-eYe">
@@ -106,6 +98,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwJ-bY-S6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="622" y="118"/>
+        </scene>
+        <!--CityTable-->
+        <scene sceneID="gOu-ik-OSO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CityTable" id="DMm-3n-pXo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibU-9A-0w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="822"/>
         </scene>
     </scenes>
 </document>
