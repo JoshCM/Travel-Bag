@@ -65,6 +65,8 @@ class ViewController: UIViewController {
             let evc = segue.destination as? EntryViewController
             evc?.country = actCountry!
             evc?.city = actCity!
+            evc?.latitude = actLoc.coordinate.latitude 
+            evc?.longitude = actLoc.coordinate.longitude 
         }
     }
     
