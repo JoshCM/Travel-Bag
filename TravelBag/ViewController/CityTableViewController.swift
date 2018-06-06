@@ -9,13 +9,22 @@
 import UIKit
 import CoreData
 
-class CityTableViewController: UITableViewController {
+class CityTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+    
+    
+    
     var cities:[CityEntry]!
     let context = AppDelegate.viewContext
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCityEntries()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -28,16 +37,27 @@ class CityTableViewController: UITableViewController {
             fatalError("Laden hat nicht so geklappt")
         }
         
-        for city in cities{
-            print(city.name)
-        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:"cityTableCell") as! CityTableViewCell
+        cell.cityName.text = cities[indexPath.row].name
+        cell.countryName.text = cities[indexPath.row].country
+        cell.Thumbnail.image = UIImage(data: cities[indexPath.row].image! as Data)
         
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
@@ -51,3 +71,5 @@ class CityTableViewController: UITableViewController {
     */
 
 }
+
+
