@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,16 +24,16 @@
                                 <gestureRecognizers/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-up-XfD">
-                                <rect key="frame" x="50" y="40" width="275" height="30"/>
+                                <rect key="frame" x="50" y="40" width="275" height="24"/>
                                 <subviews>
                                     <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City, Country" borderStyle="roundedRect" placeholder="City, Country" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-EU-59a">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="24"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-m2-yhG">
-                                        <rect key="frame" x="229" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="229" y="0.0" width="46" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRo-I1-qQO"/>
@@ -43,51 +44,73 @@
                                     <constraint firstItem="FJm-m2-yhG" firstAttribute="centerY" secondItem="RN2-EU-59a" secondAttribute="centerY" id="LhI-1x-wPK"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-9G-xyC">
-                                <rect key="frame" x="329" y="587" width="30" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.58342608649756167" green="1" blue="0.85186035038269425" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMZ-bD-ctf">
+                                <rect key="frame" x="0.0" y="564" width="375" height="103"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-9G-xyC">
+                                        <rect key="frame" x="307" y="21" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="qwx-YG-sx2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.58342608649756167" green="1" blue="0.85186035038269425" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addEntryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zy1-dp-P6I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="F4A-9G-xyC" firstAttribute="trailing" secondItem="yMZ-bD-ctf" secondAttribute="trailingMargin" id="Hn5-gF-brS"/>
+                                    <constraint firstAttribute="bottom" secondItem="F4A-9G-xyC" secondAttribute="bottom" constant="22" id="nVb-oY-74u"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="addEntryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zy1-dp-P6I"/>
+                                    <outletCollection property="gestureRecognizers" destination="ICr-Kk-ofA" appends="YES" id="cq3-nT-B0F"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIH-Nd-wbN">
-                                <rect key="frame" x="291" y="602" width="30" height="30"/>
-                                <state key="normal" title="^"/>
-                                <connections>
-                                    <action selector="tapToCityTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQ5-Y2-b4l"/>
-                                </connections>
+                            </view>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ2-tG-y3P">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F4A-9G-xyC" secondAttribute="trailing" constant="16" id="1fL-ai-z6J"/>
-                            <constraint firstItem="pIH-Nd-wbN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="291" id="29G-ic-WbF"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ri-Jp-Jtx"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Mb-Td-JPl"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="96K-PU-Ib3"/>
+                            <constraint firstAttribute="bottom" secondItem="dZ2-tG-y3P" secondAttribute="bottom" constant="20" symbolic="YES" id="BXi-7S-uOz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PbM-up-XfD" secondAttribute="trailing" constant="50" id="Enp-ll-KCo"/>
-                            <constraint firstItem="pIH-Nd-wbN" firstAttribute="top" secondItem="PbM-up-XfD" secondAttribute="bottom" constant="532" id="Gs8-8l-W0n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PbM-up-XfD" secondAttribute="bottom" constant="603" id="Gs8-8l-W0n"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="564" id="J2D-wl-ohC"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MXn-E5-f3x"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QtN-PW-Dqr"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VJi-qw-GFB"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b7m-ss-Dty"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pIH-Nd-wbN" secondAttribute="bottom" constant="35" id="f4q-5f-R6C"/>
-                            <constraint firstItem="F4A-9G-xyC" firstAttribute="leading" secondItem="pIH-Nd-wbN" secondAttribute="trailing" constant="8" id="gJZ-UM-zoY"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="grN-KW-x9j"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jNJ-ev-AUI"/>
+                            <constraint firstItem="dZ2-tG-y3P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jQb-7V-OTv"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mZr-nA-aya"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="mmt-1j-Gr3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F4A-9G-xyC" secondAttribute="bottom" constant="20" id="p39-oe-nZj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="1vD-lX-sAo" id="lXO-kr-agC"/>
+                        <outlet property="panView" destination="yMZ-bD-ctf" id="Wq8-nZ-nHH"/>
                         <outlet property="searchField" destination="RN2-EU-59a" id="Lm1-ij-DbU"/>
                         <segue destination="QPQ-NU-RDv" kind="show" identifier="addEntry" id="Qpa-5b-dea"/>
                         <segue destination="DMm-3n-pXo" kind="show" identifier="cityTable" id="HzV-qv-wzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ICr-Kk-ofA">
+                    <connections>
+                        <action selector="tableSegue:" destination="BYZ-38-t0r" id="U6O-cy-kc6"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-98.400000000000006" y="118.29085457271366"/>
         </scene>

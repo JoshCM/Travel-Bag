@@ -12,6 +12,7 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var panView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchField: UITextField!
     let initialZoom:CLLocationDistance! = 1000000
@@ -49,15 +50,21 @@ class ViewController: UIViewController {
         })
     }
     
-    @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
-        if sender.edges == .left{
-            print("hallöle")
-        }
-    }
+    
     @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
+        let origin = sender.source as! EntryViewController
+        
+        let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
+        mapView.addAnnotation(marker)
+        
+        
+        
     }
-    @IBAction func tapToCityTableView(_ sender: Any) {
-        performSegue(withIdentifier: "cityTable", sender: nil)
+    @IBAction func tableSegue(_ sender: UIPanGestureRecognizer) {
+        let state = sender.state
+        if state == UIGestureRecognizerState.ended{
+            performSegue(withIdentifier: "cityTable", sender: nil)
+        }
     }
     
     @IBAction func addEntryButton(_ sender: Any) {
@@ -83,7 +90,7 @@ class ViewController: UIViewController {
         searchField.delegate = self
         actLoc = initLoc
         self.regionRadius = initialZoom
-        let marker = Marker(title: "Hochschule", locationName: "unter den Eichen", discipline: "Education", coordinate: self.initLoc.coordinate)
+        let marker = Marker(locationName: "unter den Eichen",coordinate: self.initLoc.coordinate)
         centerMaponLocation(location: initLoc)
         mapView.addAnnotation(marker)
         
