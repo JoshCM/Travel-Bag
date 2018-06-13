@@ -51,6 +51,12 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toEntry", sender: self);
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

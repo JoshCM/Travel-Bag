@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var panView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     let initialZoom:CLLocationDistance! = 1000000
     var regionRadius :CLLocationDistance?
     let initLoc = CLLocation(latitude: 50.095845, longitude:8.218644)
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
                 location = placemarks.first?.location
                 self.actCountry = placemarks.first?.country
                 self.actCity = placemarks.first?.locality
+                self.addButton.isEnabled = true
             }
             
             if let location = location {
@@ -52,17 +54,20 @@ class ViewController: UIViewController {
     
     
     @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
-        let origin = sender.source as! EntryViewController
-        
-        let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
-        mapView.addAnnotation(marker)
-        
-        
+            let origin = sender.source as! EntryViewController
+            
+            let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
+            mapView.addAnnotation(marker)
+    }
+    
+    @IBAction func didUnwindFromTable(_ sender: UIStoryboardSegue){
         
     }
+    
+    
     @IBAction func tableSegue(_ sender: UIPanGestureRecognizer) {
         let state = sender.state
-        if state == UIGestureRecognizerState.ended{
+        if state == UIGestureRecognizerState.began{
             performSegue(withIdentifier: "cityTable", sender: nil)
         }
     }
@@ -88,6 +93,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mapView.isRotateEnabled = false
         searchField.delegate = self
+        addButton.isEnabled = false
         actLoc = initLoc
         self.regionRadius = initialZoom
         let marker = Marker(locationName: "unter den Eichen",coordinate: self.initLoc.coordinate)

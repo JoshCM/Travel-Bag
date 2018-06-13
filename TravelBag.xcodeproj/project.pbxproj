@@ -25,8 +25,10 @@
 		CA9AAFE220BE94430014F6CF /* TravelBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFE120BE94430014F6CF /* TravelBagUITests.swift */; };
 		CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFEF20BE9D650014F6CF /* Marker.swift */; };
 		CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */; };
-		CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFF920BECEE60014F6CF /* Entry.storyboard */; };
+		CA9AAFFA20BECEE60014F6CF /* NewEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */; };
 		CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */; };
+		CAB2FF3920D14FB500518F10 /* EditEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */; };
+		CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,10 @@
 		CA9AAFE320BE94430014F6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA9AAFEF20BE9D650014F6CF /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		CA9AAFF920BECEE60014F6CF /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
+		CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEntry.storyboard; sourceTree = "<group>"; };
 		CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEntry.storyboard; sourceTree = "<group>"; };
+		CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				CA9AAFC020BE94430014F6CF /* ViewController.swift */,
 				CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */,
 				424A9F1620C7FED500243973 /* CityTableViewController.swift */,
+				CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -143,7 +148,8 @@
 				CA9AAFF120BE9E030014F6CF /* Models */,
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
-				CA9AAFF920BECEE60014F6CF /* Entry.storyboard */,
+				CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */,
+				CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */,
 				CA18955120C81BDE00C75AA3 /* CityTable.storyboard */,
 				CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */,
 				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
@@ -288,7 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9AAFCC20BE94430014F6CF /* LaunchScreen.storyboard in Resources */,
-				CA9AAFFA20BECEE60014F6CF /* Entry.storyboard in Resources */,
+				CAB2FF3920D14FB500518F10 /* EditEntry.storyboard in Resources */,
+				CA9AAFFA20BECEE60014F6CF /* NewEntry.storyboard in Resources */,
 				CA9AAFC920BE94430014F6CF /* Assets.xcassets in Resources */,
 				CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */,
 				CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */,
@@ -317,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */,
+				CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */,
 				424A9F1120C7E75900243973 /* CatEntry+CoreDataProperties.swift in Sources */,
 				424A9F0F20C7E75900243973 /* Category+CoreDataProperties.swift in Sources */,
 				CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */,
