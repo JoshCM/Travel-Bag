@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     @IBAction func didUnwindFromEntryCancel(_ sender: UIStoryboardSegue){
     }
     
-    @IBAction func didUnwindFromTable(_ sender: UIStoryboardSegue){
+    @IBAction func didUnwindFromTable(_ sender: UIStoryboardSegue){	
     }
 
     @IBAction func tableSegue(_ sender: UIPanGestureRecognizer) {
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
         mapView.register(CostumPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotation(marker)
-        deleteEntriesCoreData()
+        // deleteEntriesCoreData()
     }
     
     func deleteEntriesCoreData(){
