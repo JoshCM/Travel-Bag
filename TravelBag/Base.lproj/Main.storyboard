@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OcX-TP-Ecb">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OcX-TP-Ecb">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,25 +15,40 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1vD-lX-sAo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <gestureRecognizers/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-up-XfD">
-                                <rect key="frame" x="50" y="40" width="275" height="24"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-up-XfD">
+                                <rect key="frame" x="50" y="64" width="275" height="35"/>
                                 <subviews>
-                                    <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City, Country" borderStyle="roundedRect" placeholder="City, Country" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-EU-59a">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="24"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="City, Country" clearsOnBeginEditing="YES" minimumFontSize="19" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-EU-59a">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="35"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.29846063150000002" blue="0.30415493249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="grp-gX-Pbw"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="City, Country">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.29846063148437363" blue="0.30415493250406089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-m2-yhG">
-                                        <rect key="frame" x="229" y="0.0" width="46" height="24"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-m2-yhG">
+                                        <rect key="frame" x="227" y="0.0" width="48" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="LPV-82-RPn"/>
+                                            <constraint firstAttribute="width" constant="48" id="r6f-Mn-sfT"/>
+                                        </constraints>
+                                        <state key="normal" image="search_btn"/>
                                         <connections>
                                             <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRo-I1-qQO"/>
                                         </connections>
@@ -45,15 +59,23 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMZ-bD-ctf">
-                                <rect key="frame" x="0.0" y="564" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="564" width="375" height="248"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-9G-xyC">
-                                        <rect key="frame" x="307" y="21" width="60" height="60"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ2-tG-y3P">
+                                        <rect key="frame" x="165" y="180" width="45" height="12"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="qwx-YG-sx2"/>
+                                            <constraint firstAttribute="width" constant="45" id="2Eb-N6-lTk"/>
+                                            <constraint firstAttribute="height" constant="12" id="U4z-Kp-pW2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="+">
+                                        <state key="normal" image="swipe_up"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-9G-xyC">
+                                        <rect key="frame" x="310" y="142" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MiM-OZ-NOz"/>
+                                            <constraint firstAttribute="width" constant="50" id="qwx-YG-sx2"/>
+                                        </constraints>
+                                        <state key="normal" image="add_btn">
                                             <color key="titleColor" red="0.58342608649756167" green="1" blue="0.85186035038269425" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
@@ -63,17 +85,15 @@
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="F4A-9G-xyC" firstAttribute="trailing" secondItem="yMZ-bD-ctf" secondAttribute="trailingMargin" id="Hn5-gF-brS"/>
-                                    <constraint firstAttribute="bottom" secondItem="F4A-9G-xyC" secondAttribute="bottom" constant="22" id="nVb-oY-74u"/>
+                                    <constraint firstAttribute="trailing" secondItem="F4A-9G-xyC" secondAttribute="trailing" constant="15" id="13W-GD-Avy"/>
+                                    <constraint firstItem="dZ2-tG-y3P" firstAttribute="centerX" secondItem="yMZ-bD-ctf" secondAttribute="centerX" id="1fK-qt-1TS"/>
+                                    <constraint firstItem="F4A-9G-xyC" firstAttribute="baseline" secondItem="dZ2-tG-y3P" secondAttribute="baseline" id="HWH-UR-5fw"/>
+                                    <constraint firstAttribute="bottom" secondItem="F4A-9G-xyC" secondAttribute="bottom" constant="56" id="nVb-oY-74u"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ICr-Kk-ofA" appends="YES" id="cq3-nT-B0F"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ2-tG-y3P">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -81,23 +101,22 @@
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ri-Jp-Jtx"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Mb-Td-JPl"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="96K-PU-Ib3"/>
-                            <constraint firstAttribute="bottom" secondItem="dZ2-tG-y3P" secondAttribute="bottom" constant="20" symbolic="YES" id="BXi-7S-uOz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PbM-up-XfD" secondAttribute="trailing" constant="50" id="Enp-ll-KCo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PbM-up-XfD" secondAttribute="bottom" constant="603" id="Gs8-8l-W0n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PbM-up-XfD" secondAttribute="bottom" constant="590" id="Gs8-8l-W0n"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="564" id="J2D-wl-ohC"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MXn-E5-f3x"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QtN-PW-Dqr"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VJi-qw-GFB"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b7m-ss-Dty"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="grN-KW-x9j"/>
-                            <constraint firstItem="1vD-lX-sAo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jNJ-ev-AUI"/>
-                            <constraint firstItem="dZ2-tG-y3P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jQb-7V-OTv"/>
-                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mZr-nA-aya"/>
+                            <constraint firstItem="1vD-lX-sAo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="jNJ-ev-AUI"/>
+                            <constraint firstItem="yMZ-bD-ctf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="mZr-nA-aya"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="mmt-1j-Gr3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lG9-T4-9Dt"/>
+                    <size key="freeformSize" width="375" height="812"/>
                     <connections>
                         <outlet property="addButton" destination="F4A-9G-xyC" id="fgt-T6-ElC"/>
                         <outlet property="mapView" destination="1vD-lX-sAo" id="lXO-kr-agC"/>
@@ -114,7 +133,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-98.400000000000006" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-98.400000000000006" y="118.22660098522168"/>
         </scene>
         <!--NewEntry-->
         <scene sceneID="DCn-CL-eYe">
@@ -148,4 +167,9 @@
             <point key="canvasLocation" x="-98" y="822"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_btn" width="458" height="458"/>
+        <image name="search_btn" width="372" height="272"/>
+        <image name="swipe_up" width="375" height="71"/>
+    </resources>
 </document>

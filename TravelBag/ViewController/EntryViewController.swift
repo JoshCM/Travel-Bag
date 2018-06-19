@@ -27,7 +27,7 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionField.text = "Description"
-        cityName.text = city
+        cityName.text = city.uppercased()
         countryName.text = country
         imagePicker.delegate = self
     }

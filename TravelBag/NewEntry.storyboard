@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kjx-A4-2g1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kjx-A4-2g1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JosefinSans-Bold.ttf">
+            <string>JosefinSans-Bold</string>
+        </array>
+        <array key="JosefinSans-SemiBold.ttf">
+            <string>JosefinSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Entry View Controller-->
         <scene sceneID="rAv-lR-VKQ">
@@ -18,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-UT-7ld">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload_img" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-UT-7ld">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -28,48 +36,63 @@
                                     <outletCollection property="gestureRecognizers" destination="bE8-J5-DSS" appends="YES" id="Zkl-rt-cGI"/>
                                 </connections>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SBn-NE-wrV">
-                                <rect key="frame" x="16" y="227" width="48.5" height="39"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBn-NE-wrV">
+                                <rect key="frame" x="16" y="227" width="55.5" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V64-cF-r56">
-                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V64-cF-r56">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="24"/>
+                                        <color key="textColor" red="0.0" green="0.29846063150000002" blue="0.30415493249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTt-hH-zfM">
-                                        <rect key="frame" x="0.0" y="23" width="48.5" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="25" width="55.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-SemiBold" family="Josefin Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.36706761199999999" blue="0.37407085890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Id-Fc-jgk">
-                                <rect key="frame" x="319" y="617" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Id-Fc-jgk">
+                                <rect key="frame" x="293" y="617" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Dxb-JP-4ac"/>
+                                    <constraint firstAttribute="height" constant="30" id="sd6-vP-Rt9"/>
+                                </constraints>
+                                <state key="normal" title="Save" image="save_btn"/>
                                 <connections>
                                     <action selector="saveEntry:" destination="kjx-A4-2g1" eventType="touchUpInside" id="o3V-nr-ZD5"/>
                                     <segue destination="wd4-nV-3BQ" kind="unwind" unwindAction="didUnwindFromEntry:" id="LMj-1T-Xd3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AD-zb-E5X">
-                                <rect key="frame" x="16" y="300" width="343" height="186"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="6AD-zb-E5X">
+                                <rect key="frame" x="16" y="303" width="343" height="186"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="wFE-ZG-fmG"/>
                                 </constraints>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.29846063150000002" blue="0.30415493249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-T4-LLZ">
-                                <rect key="frame" x="25" y="617" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-T4-LLZ">
+                                <rect key="frame" x="25" y="617" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UJH-Dc-wwa"/>
+                                    <constraint firstAttribute="width" constant="30" id="ZZv-FM-jwt"/>
+                                </constraints>
+                                <state key="normal" title="Cancel" image="cancel_btn"/>
                                 <connections>
-                                    <segue destination="wd4-nV-3BQ" kind="unwind" unwindAction="didUnwindFromEntry:" id="9DF-m1-BO1"/>
+                                    <segue destination="wd4-nV-3BQ" kind="unwind" unwindAction="didUnwindFromEntryCancel:" id="rIv-C9-VHo"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trenner" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-2j-iHD">
+                                <rect key="frame" x="16" y="279" width="60" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5LQ-vJ-wh9"/>
+                                    <constraint firstAttribute="height" constant="5" id="jgO-YC-THs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,8 +101,10 @@
                             <constraint firstItem="XfT-UT-7ld" firstAttribute="leading" secondItem="ho4-J7-vVd" secondAttribute="leading" id="NNx-Hx-xnu"/>
                             <constraint firstItem="SBn-NE-wrV" firstAttribute="top" secondItem="XfT-UT-7ld" secondAttribute="bottom" constant="28" id="NW0-jJ-esC"/>
                             <constraint firstItem="6AD-zb-E5X" firstAttribute="top" secondItem="SBn-NE-wrV" secondAttribute="bottom" constant="34" id="OEC-ob-Vsl"/>
+                            <constraint firstItem="5ad-2j-iHD" firstAttribute="leading" secondItem="SBn-NE-wrV" secondAttribute="leading" id="SYb-aw-FBp"/>
                             <constraint firstItem="XfT-UT-7ld" firstAttribute="top" secondItem="dLZ-5r-qRi" secondAttribute="top" id="SuT-vJ-WsV"/>
                             <constraint firstItem="ho4-J7-vVd" firstAttribute="bottom" secondItem="ltd-T4-LLZ" secondAttribute="bottom" constant="20" id="UPC-rw-Ep8"/>
+                            <constraint firstItem="5ad-2j-iHD" firstAttribute="top" secondItem="SBn-NE-wrV" secondAttribute="bottom" constant="10" id="UhD-MR-0Uj"/>
                             <constraint firstItem="6AD-zb-E5X" firstAttribute="leading" secondItem="SBn-NE-wrV" secondAttribute="leading" id="V8K-L4-69f"/>
                             <constraint firstItem="6AD-zb-E5X" firstAttribute="centerX" secondItem="dLZ-5r-qRi" secondAttribute="centerX" id="Xcq-59-XOg"/>
                             <constraint firstItem="XfT-UT-7ld" firstAttribute="trailing" secondItem="ho4-J7-vVd" secondAttribute="trailing" id="doa-PM-4Mo"/>
@@ -107,6 +132,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo-camera" width="512" height="512"/>
+        <image name="cancel_btn" width="362" height="360"/>
+        <image name="save_btn" width="725" height="360"/>
+        <image name="trenner" width="483" height="60"/>
+        <image name="upload_img" width="1583" height="833"/>
     </resources>
 </document>

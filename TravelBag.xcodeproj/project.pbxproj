@@ -14,6 +14,7 @@
 		424A9F1220C7E75900243973 /* CityEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F0C20C7E75900243973 /* CityEntry+CoreDataClass.swift */; };
 		424A9F1320C7E75900243973 /* CityEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F0D20C7E75900243973 /* CityEntry+CoreDataProperties.swift */; };
 		424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F1620C7FED500243973 /* CityTableViewController.swift */; };
+		8005B4D720D5AB67002E5602 /* CostumPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005B4D620D5AB67002E5602 /* CostumPin.swift */; };
 		CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA18955120C81BDE00C75AA3 /* CityTable.storyboard */; };
 		CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */; };
 		CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFC020BE94430014F6CF /* ViewController.swift */; };
@@ -56,6 +57,10 @@
 		424A9F0C20C7E75900243973 /* CityEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		424A9F0D20C7E75900243973 /* CityEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		424A9F1620C7FED500243973 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		8005B4D620D5AB67002E5602 /* CostumPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumPin.swift; sourceTree = "<group>"; };
+		8005B4DB20D5C430002E5602 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Regular.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		8005B4DC20D5C430002E5602 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Bold.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		8005B4DD20D5C430002E5602 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-SemiBold.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		CA18955220C81BDE00C75AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TravelBag/Base.lproj/CityTable.storyboard; sourceTree = "<group>"; };
 		CA9AAFBB20BE94430014F6CF /* TravelBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +120,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8005B4DA20D5C3AA002E5602 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				8005B4DC20D5C430002E5602 /* JosefinSans-Bold.ttf */,
+				8005B4DB20D5C430002E5602 /* JosefinSans-Regular.ttf */,
+				8005B4DD20D5C430002E5602 /* JosefinSans-SemiBold.ttf */,
+				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
+				CA9AAFCD20BE94430014F6CF /* Info.plist */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
 		CA9AAFB220BE94430014F6CF = {
 			isa = PBXGroup;
 			children = (
@@ -147,14 +164,12 @@
 				424A9ED720C7D37900243973 /* ViewController */,
 				CA9AAFF120BE9E030014F6CF /* Models */,
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
+				CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
 				CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */,
 				CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */,
 				CA18955120C81BDE00C75AA3 /* CityTable.storyboard */,
-				CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */,
-				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
-				CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */,
-				CA9AAFCD20BE94430014F6CF /* Info.plist */,
+				8005B4DA20D5C3AA002E5602 /* Ressources */,
 				CA9AAFC520BE94430014F6CF /* TravelBag.xcdatamodeld */,
 			);
 			path = TravelBag;
@@ -181,7 +196,9 @@
 		CA9AAFF120BE9E030014F6CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */,
 				CA9AAFEF20BE9D650014F6CF /* Marker.swift */,
+				8005B4D620D5AB67002E5602 /* CostumPin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 				CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */,
 				424A9F0E20C7E75900243973 /* Category+CoreDataClass.swift in Sources */,
 				CA9AAFF320BEC8E90014F6CF /* EntryViewController.swift in Sources */,
+				8005B4D720D5AB67002E5602 /* CostumPin.swift in Sources */,
 				CA9AAFC720BE94430014F6CF /* TravelBag.xcdatamodeld in Sources */,
 				424A9F1020C7E75900243973 /* CatEntry+CoreDataClass.swift in Sources */,
 				CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */,
@@ -511,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TravelBag/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TravelBag/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 
 class ViewController: UIViewController {
@@ -20,8 +21,9 @@ class ViewController: UIViewController {
     var regionRadius :CLLocationDistance?
     let initLoc = CLLocation(latitude: 50.095845, longitude:8.218644)
     var actLoc : CLLocation!
-    var actCountry: String?
-    var actCity: String?
+    var actCountry: String!
+    var actCity: String!
+    let context = AppDelegate.viewContext
     
     func centerMaponLocation(location:CLLocation){
         let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius!, regionRadius!)
@@ -60,11 +62,12 @@ class ViewController: UIViewController {
             mapView.addAnnotation(marker)
     }
     
-    @IBAction func didUnwindFromTable(_ sender: UIStoryboardSegue){
-        
+    @IBAction func didUnwindFromEntryCancel(_ sender: UIStoryboardSegue){
     }
     
-    
+    @IBAction func didUnwindFromTable(_ sender: UIStoryboardSegue){
+    }
+
     @IBAction func tableSegue(_ sender: UIPanGestureRecognizer) {
         let state = sender.state
         if state == UIGestureRecognizerState.began{
@@ -81,8 +84,8 @@ class ViewController: UIViewController {
         if segue.destination is EntryViewController
         {
             let evc = segue.destination as? EntryViewController
-            evc?.country = actCountry!
-            evc?.city = actCity!
+            evc?.country = actCountry
+            evc?.city = actCity
             evc?.latitude = actLoc.coordinate.latitude 
             evc?.longitude = actLoc.coordinate.longitude 
         }
@@ -98,8 +101,24 @@ class ViewController: UIViewController {
         self.regionRadius = initialZoom
         let marker = Marker(locationName: "unter den Eichen",coordinate: self.initLoc.coordinate)
         centerMaponLocation(location: initLoc)
+        mapView.register(CostumPin.self,
+                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotation(marker)
-        
+        deleteEntriesCoreData()
+    }
+    
+    func deleteEntriesCoreData(){
+        /* Methode später löschen und oben Variable context */
+        let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
+        do{
+            let items = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [NSManagedObject]
+            
+            for item in items {
+                context.delete(item)
+            }
+        }catch{
+            fatalError("Löschen hat nicht so geklappt")
+        }
     }
 
     override func didReceiveMemoryWarning() {

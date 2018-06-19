@@ -13,8 +13,11 @@ class Marker: NSObject, MKAnnotation {
     
     let locationName: String
     let coordinate: CLLocationCoordinate2D
+    var imageName: String?{
+        return "pin"
+    }
     
-    init(locationName: String,coordinate: CLLocationCoordinate2D) {
+    init(locationName: String, coordinate: CLLocationCoordinate2D) {
         self.locationName = locationName
         self.coordinate = coordinate
         super.init()

@@ -10,10 +10,7 @@ import UIKit
 import CoreData
 
 class CityTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
-    
-    
-    
+
     var cities:[CityEntry]!
     let context = AppDelegate.viewContext
     @IBOutlet weak var tableView: UITableView!
@@ -23,8 +20,6 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
         loadCityEntries()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -47,8 +42,13 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier:"cityTableCell") as! CityTableViewCell
         cell.cityName.text = cities[indexPath.row].name
         cell.countryName.text = cities[indexPath.row].country
-        cell.Thumbnail.image = UIImage(data: cities[indexPath.row].image! as Data)
         
+        if cities[indexPath.row].image == nil{
+            cell.Thumbnail.image = UIImage(named: "no_img")
+        }else{
+            cell.Thumbnail.image = UIImage(data: cities[indexPath.row].image! as Data)
+            
+        }
         return cell
     }
     
@@ -62,19 +62,6 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
