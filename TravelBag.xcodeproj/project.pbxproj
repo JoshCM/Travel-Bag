@@ -32,6 +32,7 @@
 		CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */; };
 		CAC2342720DA4DEB00AB631D /* NewCatEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC2342620DA4DEB00AB631D /* NewCatEntry.storyboard */; };
 		CAC2342920DA504900AB631D /* NewCatEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */; };
+		CAC2343020DA80D900AB631D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2342F20DA80D900AB631D /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
 		CAC2342620DA4DEB00AB631D /* NewCatEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCatEntry.storyboard; sourceTree = "<group>"; };
 		CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatEntryViewController.swift; sourceTree = "<group>"; };
+		CAC2342F20DA80D900AB631D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				424A9F1620C7FED500243973 /* CityTableViewController.swift */,
 				CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */,
 				CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */,
+				CAC2342F20DA80D900AB631D /* CategoryCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */,
 				CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */,
 				424A9F1120C7E75900243973 /* CatEntry+CoreDataProperties.swift in Sources */,
+				CAC2343020DA80D900AB631D /* CategoryCollectionViewCell.swift in Sources */,
 				424A9F0F20C7E75900243973 /* Category+CoreDataProperties.swift in Sources */,
 				CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */,
 				424A9F0E20C7E75900243973 /* Category+CoreDataClass.swift in Sources */,

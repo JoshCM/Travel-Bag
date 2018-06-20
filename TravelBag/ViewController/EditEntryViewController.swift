@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate,UICollectionViewDataSource{
 
     var city: String = ""
     var country: String = ""
@@ -21,13 +21,17 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     var tap:UITapGestureRecognizer?
     let context = AppDelegate.viewContext
     var imageChanged:Bool = false
+    var imageArray = [UIImage(named:"no_img"),UIImage(named:"no_img"),UIImage(named:"no_img"),UIImage(named:"no_img")]
     
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var descriptionField: UITextView!
     
-    
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var foodCollectionView: UICollectionView!
+    
+    @IBOutlet weak var SightCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +39,6 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         countryName.text = country
         imagePicker.delegate = self
         tap = UITapGestureRecognizer(target: self, action:#selector(handleImageTaped(_sender:)))
-    
-        
         
         if image != nil {
             imageView.image = image
@@ -58,6 +60,10 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         catch {
             print ("fetch task failed", error)
         }
+        
+        
+        
+        
         
         
     
@@ -126,6 +132,22 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
             let dest = segue.destination as! NewCatEntryViewController
             dest.cityCoreData = self.cityCoreData!
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.foodCollectionView{
+            print("hallo i bims")
+        }
+        else{
+            print("keine ahnung wer du bist")
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
+        cell.catImage.image = imageArray[indexPath.row]
+        return cell
     }
     
     /*
