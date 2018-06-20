@@ -20,5 +20,6 @@ extension CatEntry {
     @NSManaged public var title: String?
     @NSManaged public var descript: String?
     @NSManaged public var image: NSData?
+    @NSManaged public var address: String?
 
 }

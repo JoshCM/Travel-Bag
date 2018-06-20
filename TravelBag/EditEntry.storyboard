@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1254"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9m-18-t6V">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1254"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="707.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wdB-x6-MsT">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
@@ -118,6 +118,14 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nps-HH-4dc">
+                                                <rect key="frame" x="322" y="229" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="addCatEntry:" destination="GeQ-0T-nss" eventType="touchUpInside" id="xgw-xH-Nia"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="BVZ-YL-2lB" firstAttribute="bottom" secondItem="kO5-et-WoI" secondAttribute="bottom" id="1b8-QT-d70"/>
@@ -137,13 +145,13 @@
                                             <constraint firstItem="BVZ-YL-2lB" firstAttribute="trailing" secondItem="iFI-OM-Exf" secondAttribute="trailing" id="jM7-ki-2yi"/>
                                             <constraint firstItem="d0r-h7-81R" firstAttribute="leading" secondItem="z9m-18-t6V" secondAttribute="leading" constant="15" id="kug-W1-gae"/>
                                             <constraint firstItem="nkB-pV-rfi" firstAttribute="centerX" secondItem="z9m-18-t6V" secondAttribute="centerX" id="pVY-O9-1Cn"/>
+                                            <constraint firstAttribute="bottom" secondItem="kO5-et-WoI" secondAttribute="bottom" constant="30" id="qoC-bm-HfT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="z9m-18-t6V" firstAttribute="leading" secondItem="vSj-3J-3FS" secondAttribute="leading" id="77L-pp-3Gw"/>
                                     <constraint firstAttribute="bottom" secondItem="z9m-18-t6V" secondAttribute="bottom" id="DpP-2R-Bp6"/>
-                                    <constraint firstItem="z9m-18-t6V" firstAttribute="centerY" secondItem="vSj-3J-3FS" secondAttribute="centerY" id="Jxa-A8-D3U"/>
                                     <constraint firstAttribute="trailing" secondItem="z9m-18-t6V" secondAttribute="trailing" id="Vbb-hS-gkL"/>
                                     <constraint firstItem="z9m-18-t6V" firstAttribute="top" secondItem="vSj-3J-3FS" secondAttribute="top" id="YxS-4Y-AvK"/>
                                     <constraint firstItem="z9m-18-t6V" firstAttribute="centerX" secondItem="vSj-3J-3FS" secondAttribute="centerX" id="jnF-5N-p5V"/>
@@ -165,6 +173,7 @@
                         <outlet property="countryName" destination="1um-OQ-jMa" id="ArO-oJ-yuc"/>
                         <outlet property="descriptionField" destination="iFI-OM-Exf" id="u46-El-lv6"/>
                         <outlet property="imageView" destination="wdB-x6-MsT" id="sBf-Ly-45v"/>
+                        <segue destination="aIp-6g-T1T" kind="show" identifier="NewCatSegue" id="Jvh-KX-gcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drL-cf-3IQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,6 +185,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="370.39999999999998" y="17.991004497751124"/>
+        </scene>
+        <!--NewCatEntry-->
+        <scene sceneID="gym-D0-DrE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewCatEntry" id="aIp-6g-T1T" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U30-PX-eNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="18"/>
         </scene>
     </scenes>
 </document>

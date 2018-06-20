@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate {
+class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     var city: String = ""
     var country: String = ""
@@ -18,6 +18,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     var descript: String = ""
     var cityCoreData:CityEntry?
     var imagePicker = UIImagePickerController()
+    var tap:UITapGestureRecognizer?
     let context = AppDelegate.viewContext
     var imageChanged:Bool = false
     
@@ -25,12 +26,15 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var descriptionField: UITextView!
     
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cityName.text = city.uppercased()
         countryName.text = country
+        imagePicker.delegate = self
+        tap = UITapGestureRecognizer(target: self, action:#selector(handleImageTaped(_sender:)))
     
         
         
@@ -69,13 +73,13 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         if sender.title(for: .normal) == "Edit"{
             descriptionField.isSelectable = true
             descriptionField.isEditable = true
-            let tap = UITapGestureRecognizer(target: self, action:#selector(handleImageTaped(_sender:)))
-            imageView.addGestureRecognizer(tap)
+            imageView.addGestureRecognizer(self.tap!)
             sender.setTitle("Save", for: .normal)
         }else{
             descriptionField.isSelectable = false
             descriptionField.isEditable = false
             self.cityCoreData?.descript = descriptionField.text
+            imageView.removeGestureRecognizer(self.tap!)
             if (imageChanged){
                 cityCoreData?.image = UIImagePNGRepresentation(imageView.image!) as NSData?
             }
@@ -103,6 +107,25 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         imageView.contentMode = .scaleAspectFill
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    @IBAction func didUnwindFromNewCatEntry(_ sender: UIStoryboardSegue){
+        for case let cat as Category in cityCoreData!.cats!{
+            for case let ent as CatEntry in cat.catent!{
+                print(ent.title)
+            }
+        }
+    }
+    
+    @IBAction func addCatEntry(_ sender: UIButton) {
+        performSegue(withIdentifier: "NewCatSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewCatSegue"{
+            let dest = segue.destination as! NewCatEntryViewController
+            dest.cityCoreData = self.cityCoreData!
+        }
     }
     
     /*

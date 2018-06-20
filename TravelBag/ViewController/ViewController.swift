@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var actCountry: String!
     var actCity: String!
     let context = AppDelegate.viewContext
+    let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
     
     func centerMaponLocation(location:CLLocation){
         let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius!, regionRadius!)
@@ -59,6 +60,8 @@ class ViewController: UIViewController {
             let origin = sender.source as! EntryViewController
             
             let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
+            mapView.register(CostumPin.self,
+                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
             mapView.addAnnotation(marker)
     }
     
@@ -99,19 +102,34 @@ class ViewController: UIViewController {
         addButton.isEnabled = false
         actLoc = initLoc
         self.regionRadius = initialZoom
-        let marker = Marker(locationName: "unter den Eichen",coordinate: self.initLoc.coordinate)
-        centerMaponLocation(location: initLoc)
-        mapView.register(CostumPin.self,
-                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        mapView.addAnnotation(marker)
-        // deleteEntriesCoreData()
+        loadCities()
+        
+        //deleteEntriesCoreData()
+        if context.hasChanges{
+           try? context.save()
+        }
+    }
+    
+    func loadCities(){
+        
+        do{
+            let cityEntries = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [CityEntry]
+            
+            for entry in cityEntries{
+                let marker = Marker(locationName: entry.name!,coordinate: CLLocationCoordinate2D(latitude: entry.latitude,longitude: entry.longitude))
+                mapView.register(CostumPin.self,
+                                 forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+                mapView.addAnnotation(marker)
+            }
+        }catch{
+            print("failed fetch request")
+        }
     }
     
     func deleteEntriesCoreData(){
         /* Methode später löschen und oben Variable context */
-        let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
         do{
-            let items = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [NSManagedObject]
+            let items = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [CityEntry]
             
             for item in items {
                 context.delete(item)

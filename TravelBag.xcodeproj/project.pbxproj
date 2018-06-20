@@ -30,6 +30,8 @@
 		CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */; };
 		CAB2FF3920D14FB500518F10 /* EditEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */; };
 		CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */; };
+		CAC2342720DA4DEB00AB631D /* NewCatEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC2342620DA4DEB00AB631D /* NewCatEntry.storyboard */; };
+		CAC2342920DA504900AB631D /* NewCatEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +60,6 @@
 		424A9F0D20C7E75900243973 /* CityEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		424A9F1620C7FED500243973 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		8005B4D620D5AB67002E5602 /* CostumPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumPin.swift; sourceTree = "<group>"; };
-		8005B4DB20D5C430002E5602 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Regular.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
-		8005B4DC20D5C430002E5602 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-Bold.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
-		8005B4DD20D5C430002E5602 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JosefinSans-SemiBold.ttf"; path = "../../../../../../Library/Fonts/JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		CA18955220C81BDE00C75AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TravelBag/Base.lproj/CityTable.storyboard; sourceTree = "<group>"; };
 		CA9AAFBB20BE94430014F6CF /* TravelBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +81,8 @@
 		CAB1346B20C80E9B00FECB50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEntry.storyboard; sourceTree = "<group>"; };
 		CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
+		CAC2342620DA4DEB00AB631D /* NewCatEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCatEntry.storyboard; sourceTree = "<group>"; };
+		CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 				CA9AAFF220BEC8E90014F6CF /* EntryViewController.swift */,
 				424A9F1620C7FED500243973 /* CityTableViewController.swift */,
 				CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */,
+				CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -123,9 +125,6 @@
 		8005B4DA20D5C3AA002E5602 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				8005B4DC20D5C430002E5602 /* JosefinSans-Bold.ttf */,
-				8005B4DB20D5C430002E5602 /* JosefinSans-Regular.ttf */,
-				8005B4DD20D5C430002E5602 /* JosefinSans-SemiBold.ttf */,
 				CA9AAFC820BE94430014F6CF /* Assets.xcassets */,
 				CA9AAFCD20BE94430014F6CF /* Info.plist */,
 			);
@@ -168,6 +167,7 @@
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
 				CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */,
 				CAB2FF3820D14FB500518F10 /* EditEntry.storyboard */,
+				CAC2342620DA4DEB00AB631D /* NewCatEntry.storyboard */,
 				CA18955120C81BDE00C75AA3 /* CityTable.storyboard */,
 				8005B4DA20D5C3AA002E5602 /* Ressources */,
 				CA9AAFC520BE94430014F6CF /* TravelBag.xcdatamodeld */,
@@ -314,6 +314,7 @@
 				CAB2FF3920D14FB500518F10 /* EditEntry.storyboard in Resources */,
 				CA9AAFFA20BECEE60014F6CF /* NewEntry.storyboard in Resources */,
 				CA9AAFC920BE94430014F6CF /* Assets.xcassets in Resources */,
+				CAC2342720DA4DEB00AB631D /* NewCatEntry.storyboard in Resources */,
 				CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */,
 				CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */,
 			);
@@ -353,6 +354,7 @@
 				CAB1346C20C80E9B00FECB50 /* CityTableViewCell.swift in Sources */,
 				424A9F1220C7E75900243973 /* CityEntry+CoreDataClass.swift in Sources */,
 				CA9AAFF020BE9D650014F6CF /* Marker.swift in Sources */,
+				CAC2342920DA504900AB631D /* NewCatEntryViewController.swift in Sources */,
 				424A9F1320C7E75900243973 /* CityEntry+CoreDataProperties.swift in Sources */,
 				CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */,
 			);

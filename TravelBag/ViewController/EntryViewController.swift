@@ -49,6 +49,17 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBAction func saveEntry(_ sender: Any) {
         let context = AppDelegate.viewContext
         let city:CityEntry = CityEntry(context: context)
+        let food:Category = Category(context: context)
+        let housing:Category = Category(context: context)
+        let acitivities:Category = Category(context: context)
+        let sights:Category = Category(context: context)
+        
+        food.title = "Food"
+        housing.title = "Housing"
+        sights.title = "Sight"
+        acitivities.title = "Activity"
+        
+        
         
         city.name = cityName.text
         city.country = countryName.text
@@ -58,6 +69,8 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         if (imageChanged){
             city.image = UIImagePNGRepresentation(imageView.image!) as NSData?
         }
+        
+        city.addToCats(NSSet(array: [food,housing,acitivities,sights]))
         try? context.save()
         
         
