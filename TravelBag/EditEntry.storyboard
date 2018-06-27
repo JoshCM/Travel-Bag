@@ -195,8 +195,8 @@
                                                                     <outlet property="delegate" destination="GeQ-0T-nss" id="ba0-Nh-gHP"/>
                                                                 </connections>
                                                             </collectionView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-Hf-7P3">
-                                                                <rect key="frame" x="15" y="0.0" width="39" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-Hf-7P3">
+                                                                <rect key="frame" x="15" y="0.0" width="48.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -257,8 +257,8 @@
                                                                     <outlet property="delegate" destination="GeQ-0T-nss" id="jF1-XJ-1VX"/>
                                                                 </connections>
                                                             </collectionView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-C6-l4v">
-                                                                <rect key="frame" x="15" y="0.0" width="39" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Housing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVb-C6-l4v">
+                                                                <rect key="frame" x="15" y="0.0" width="63.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -319,8 +319,8 @@
                                                                     <outlet property="delegate" destination="GeQ-0T-nss" id="dCn-27-Nit"/>
                                                                 </connections>
                                                             </collectionView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcZ-bM-c1T">
-                                                                <rect key="frame" x="15" y="0.0" width="39" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcZ-bM-c1T">
+                                                                <rect key="frame" x="15" y="0.0" width="69.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -394,12 +394,16 @@
                     </view>
                     <size key="freeformSize" width="375" height="1254"/>
                     <connections>
+                        <outlet property="activityCollectionView" destination="HGh-0a-jPh" id="Liy-1u-7DF"/>
                         <outlet property="cityName" destination="7a6-1C-qh0" id="Fd6-Ys-AKS"/>
                         <outlet property="countryName" destination="1um-OQ-jMa" id="ArO-oJ-yuc"/>
                         <outlet property="descriptionField" destination="iFI-OM-Exf" id="u46-El-lv6"/>
                         <outlet property="foodCollectionView" destination="HOo-EH-CSj" id="wCB-bE-dVa"/>
+                        <outlet property="housingCollectionView" destination="T82-1i-L4F" id="yd1-Xa-7wT"/>
                         <outlet property="imageView" destination="wdB-x6-MsT" id="sBf-Ly-45v"/>
+                        <outlet property="sightCollectionView" destination="UaM-ZX-z0M" id="4wD-bg-WLS"/>
                         <segue destination="aIp-6g-T1T" kind="show" identifier="NewCatSegue" id="Jvh-KX-gcj"/>
+                        <segue destination="ACH-6n-YSm" kind="unwind" unwindAction="didUnwindFromEditEntry:" id="a1c-Ek-eW8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drL-cf-3IQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,37 +10,75 @@ import UIKit
 import CoreData
 
 class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     let cats = ["Food","Sight","Housing", "Activity"]
     var cityCoreData:CityEntry?
     var imagePicker = UIImagePickerController()
     var imageChanged = false
+    var tap:UITapGestureRecognizer?
     
     @IBOutlet weak var pickerTextField: UITextField!
     
     @IBOutlet weak var descriptionText: UITextField!
     
-    @IBOutlet weak var addressText: UITextField!
+    @IBOutlet weak var addressText: UITextView!
     
     @IBOutlet weak var catImage: UIImageView!
     
     @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         let pickerView = UIPickerView()
         pickerView.delegate = self
         imagePicker.delegate = self
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleImageTaped(_sender:)))
-        catImage.addGestureRecognizer(tap)
-        
         pickerTextField.inputView = pickerView
+        descriptionText.layer.borderWidth = 0.5
+        descriptionText.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.1).cgColor
+        descriptionText.layer.cornerRadius = 5
+        addressText.layer.borderWidth = 0.5
+        addressText.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.1).cgColor
+        addressText.layer.cornerRadius = 5
         
-        // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func saveEntry(_ sender: Any) {
+        if (!(pickerTextField.text! == "" && titleText.text! == "")){
+            let context = AppDelegate.viewContext
+            var category:Category?
+            let catentry:CatEntry = CatEntry(context: context)
+            
+            for case let cat as Category in cityCoreData!.cats!{
+                if cat.title == pickerTextField.text!{
+                    category = cat
+                }
+            }
+            
+            catentry.descript = descriptionText.text
+            catentry.title = titleText.text
+            
+            if imageChanged{
+                catentry.image = UIImagePNGRepresentation(catImage.image!) as NSData?
+            }else{
+                catentry.image = UIImagePNGRepresentation(UIImage(named: "no_img")!) as NSData?
+            }
+            
+            category!.addToCatent(catentry)
+            try? context.save()
+            self.performSegue(withIdentifier: "backtoCityList", sender: self)
+            
+        }else{
+            if pickerTextField.text == ""{
+                pickerTextField.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.1)
+            }
+            if titleText.text == ""{
+                titleText.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.1)
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -60,7 +98,7 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.view.endEditing(true)
     }
     
-    @objc func handleImageTaped(_sender:UITapGestureRecognizer){
+    @IBAction func imageTaped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker,animated: true,completion: nil)
     }
@@ -77,37 +115,14 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         dismiss(animated: true, completion: nil)
         
     }
-    
-    
-    @IBAction func saveEntry(_ sender: Any) {
-        let context = AppDelegate.viewContext
-        var category:Category?
-        let catentry:CatEntry = CatEntry(context: context)
-  
-        for case let cat as Category in cityCoreData!.cats!{
-            if cat.title == pickerTextField.text!{
-                category = cat
-            }
-        }
-        
-        catentry.descript = descriptionText.text
-        catentry.title = titleText.text
-        
-        if imageChanged{
-            catentry.image = UIImagePNGRepresentation(catImage.image!) as NSData?
-        }
-        
-        category!.addToCatent(catentry)
-        try? context.save()
-    }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -123,7 +123,7 @@
                         <outlet property="panView" destination="yMZ-bD-ctf" id="Wq8-nZ-nHH"/>
                         <outlet property="searchField" destination="RN2-EU-59a" id="Lm1-ij-DbU"/>
                         <segue destination="QPQ-NU-RDv" kind="show" identifier="addEntry" id="Qpa-5b-dea"/>
-                        <segue destination="DMm-3n-pXo" kind="show" identifier="cityTable" id="HzV-qv-wzH"/>
+                        <segue destination="DMm-3n-pXo" kind="show" identifier="cityTable" customClass="SwipeUpSegue" customModule="TravelBag" customModuleProvider="target" id="HzV-qv-wzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

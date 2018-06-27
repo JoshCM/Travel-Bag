@@ -51,13 +51,13 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         let city:CityEntry = CityEntry(context: context)
         let food:Category = Category(context: context)
         let housing:Category = Category(context: context)
-        let acitivities:Category = Category(context: context)
+        let activities:Category = Category(context: context)
         let sights:Category = Category(context: context)
         
         food.title = "Food"
         housing.title = "Housing"
         sights.title = "Sight"
-        acitivities.title = "Activity"
+        activities.title = "Activity"
         
         
         
@@ -70,7 +70,7 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             city.image = UIImagePNGRepresentation(imageView.image!) as NSData?
         }
         
-        city.addToCats(NSSet(array: [food,housing,acitivities,sights]))
+        city.addToCats(NSSet(array: [food,housing,activities,sights]))
         try? context.save()
         
         
