@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName=".Category" syncable="YES">
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="catent" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CatEntry" syncable="YES"/>
     </entity>
     <entity name="CatEntry" representedClassName=".CatEntry" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descript" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
@@ -19,8 +20,8 @@
         <relationship name="cats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CityEntry" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Category" positionX="-54" positionY="18" width="128" height="75"/>
-        <element name="CatEntry" positionX="-36" positionY="27" width="128" height="90"/>
+        <element name="CatEntry" positionX="-36" positionY="27" width="128" height="105"/>
+        <element name="CityEntry" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

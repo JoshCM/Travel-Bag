@@ -61,6 +61,10 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             catentry.descript = descriptionText.text
             catentry.title = titleText.text
             
+            if let address = addressText.text{
+                catentry.address = address
+            }
+            
             if imageChanged{
                 catentry.image = UIImagePNGRepresentation(catImage.image!) as NSData?
             }else{

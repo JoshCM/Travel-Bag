@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //deleteEntriesCoreData()
+        deleteEntriesCoreData()
         mapView.isRotateEnabled = false
         searchField.delegate = self
         addButton.isEnabled = false
