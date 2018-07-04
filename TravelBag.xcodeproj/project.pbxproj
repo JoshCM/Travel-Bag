@@ -19,6 +19,8 @@
 		424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A9F1620C7FED500243973 /* CityTableViewController.swift */; };
 		8005B4D720D5AB67002E5602 /* CostumPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005B4D620D5AB67002E5602 /* CostumPin.swift */; };
 		CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA18955120C81BDE00C75AA3 /* CityTable.storyboard */; };
+		CA3D24DE20ECCDA4006645D8 /* CatEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3D24DD20ECCDA4006645D8 /* CatEntry.storyboard */; };
+		CA3D24E020ECD329006645D8 /* CatEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3D24DF20ECD329006645D8 /* CatEntryViewController.swift */; };
 		CA9AAFBF20BE94430014F6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */; };
 		CA9AAFC120BE94430014F6CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AAFC020BE94430014F6CF /* ViewController.swift */; };
 		CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9AAFC220BE94430014F6CF /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		424A9F1620C7FED500243973 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		8005B4D620D5AB67002E5602 /* CostumPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumPin.swift; sourceTree = "<group>"; };
 		CA18955220C81BDE00C75AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TravelBag/Base.lproj/CityTable.storyboard; sourceTree = "<group>"; };
+		CA3D24DD20ECCDA4006645D8 /* CatEntry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatEntry.storyboard; sourceTree = "<group>"; };
+		CA3D24DF20ECD329006645D8 /* CatEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatEntryViewController.swift; sourceTree = "<group>"; };
 		CA9AAFBB20BE94430014F6CF /* TravelBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9AAFC020BE94430014F6CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				CAB2FF3A20D1521900518F10 /* EditEntryViewController.swift */,
 				CAC2342820DA504900AB631D /* NewCatEntryViewController.swift */,
 				CAC2342F20DA80D900AB631D /* CategoryCollectionViewCell.swift */,
+				CA3D24DF20ECD329006645D8 /* CatEntryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				424A9ED720C7D37900243973 /* ViewController */,
 				CA9AAFF120BE9E030014F6CF /* Models */,
 				CA9AAFBE20BE94430014F6CF /* AppDelegate.swift */,
+				CA3D24DD20ECCDA4006645D8 /* CatEntry.storyboard */,
 				CA9AAFCA20BE94430014F6CF /* LaunchScreen.storyboard */,
 				CA9AAFC220BE94430014F6CF /* Main.storyboard */,
 				CA9AAFF920BECEE60014F6CF /* NewEntry.storyboard */,
@@ -334,6 +340,7 @@
 				CAB2FF3920D14FB500518F10 /* EditEntry.storyboard in Resources */,
 				CA9AAFFA20BECEE60014F6CF /* NewEntry.storyboard in Resources */,
 				CA9AAFC920BE94430014F6CF /* Assets.xcassets in Resources */,
+				CA3D24DE20ECCDA4006645D8 /* CatEntry.storyboard in Resources */,
 				CAC2342720DA4DEB00AB631D /* NewCatEntry.storyboard in Resources */,
 				CA9AAFC420BE94430014F6CF /* Main.storyboard in Resources */,
 				CA18955320C81BDE00C75AA3 /* CityTable.storyboard in Resources */,
@@ -362,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DCF40220E3B748006FAB74 /* SwipeLeftSegue.swift in Sources */,
+				CA3D24E020ECD329006645D8 /* CatEntryViewController.swift in Sources */,
 				424A9F1720C7FED500243973 /* CityTableViewController.swift in Sources */,
 				CAB2FF3B20D1521900518F10 /* EditEntryViewController.swift in Sources */,
 				424A9F1120C7E75900243973 /* CatEntry+CoreDataProperties.swift in Sources */,
@@ -555,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56QSS4SN4R;
 				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;
@@ -569,6 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56QSS4SN4R;
 				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;

@@ -22,6 +22,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     let context = AppDelegate.viewContext
     var imageChanged:Bool = false
     var activity,food,sight,housing:Category!
+    var chosenCat:CatEntry?
     
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var countryName: UILabel!
@@ -124,6 +125,10 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         sightCollectionView.reloadData()
     }
     
+    @IBAction func didUnwindFromCatEntry(_ sender:UIStoryboardSegue){
+        
+    }
+    
     @IBAction func addCatEntry(_ sender: UIButton) {
         performSegue(withIdentifier: "NewCatSegue", sender: self)
     }
@@ -132,6 +137,11 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         if segue.identifier == "NewCatSegue"{
             let dest = segue.destination as! NewCatEntryViewController
             dest.cityCoreData = self.cityCoreData!
+       }
+        else if segue.identifier == "CatSegue"{
+            let dest = segue.destination as! CatEntryViewController
+            print(chosenCat!.title)
+            dest.catEntry = self.chosenCat!
         }
     }
     
@@ -179,26 +189,32 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         switch collectionView {
         case self.activityCollectionView:
             cell.catImage.image = UIImage(data: acts[indexPath.row].image! as Data)
+            cell.catLabel.text = acts[indexPath.row].title
+            cell.catEntry = acts[indexPath.row]
         case self.foodCollectionView:
             cell.catImage.image = UIImage(data: food[indexPath.row].image! as Data)
+            cell.catLabel.text = food[indexPath.row].title
+            cell.catEntry = food[indexPath.row]
         case self.housingCollectionView:
             cell.catImage.image = UIImage(data: house[indexPath.row].image! as Data)
+            cell.catLabel.text = house[indexPath.row].title
+            cell.catEntry = house[indexPath.row]
         case self.sightCollectionView:
             cell.catImage.image = UIImage(data: sight[indexPath.row].image! as Data)
+            cell.catLabel.text = sight[indexPath.row].title
+            cell.catEntry = sight[indexPath.row]
         default:
             break
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
+        self.chosenCat = cell.catEntry
+        print(chosenCat!.title)
+        performSegue(withIdentifier: "CatSegue", sender: self)
         
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destinationViewController.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+    }
+    
 }

@@ -97,6 +97,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //deleteEntriesCoreData()
         mapView.isRotateEnabled = false
         searchField.delegate = self
         addButton.isEnabled = false
@@ -104,7 +105,7 @@ class ViewController: UIViewController {
         self.regionRadius = initialZoom
         loadCities()
         
-        //deleteEntriesCoreData()
+        
         if context.hasChanges{
            try? context.save()
         }

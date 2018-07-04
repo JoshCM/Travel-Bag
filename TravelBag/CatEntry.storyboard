@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27M-ge-LLW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat Entry View Controller-->
+        <scene sceneID="cJn-nf-aiw">
+            <objects>
+                <viewController id="27M-ge-LLW" customClass="CatEntryViewController" customModule="TravelBag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Fj-Rq-3zF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ro-0M-uD9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="rb0-PS-LIa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MS-qJ-SLL">
+                                <rect key="frame" x="15" y="230" width="33" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYt-Va-uYc">
+                                <rect key="frame" x="15" y="255.5" width="75" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-Dw-LpR">
+                                <rect key="frame" x="15" y="296" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="BGg-JH-Pjn"/>
+                                    <constraint firstAttribute="width" secondItem="d9M-Dw-LpR" secondAttribute="height" multiplier="1:1" id="qP0-Rh-rdM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0K-t3-fr2">
+                                <rect key="frame" x="63" y="301" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-Vs-EDK">
+                                <rect key="frame" x="15" y="354" width="345" height="263"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNu-Yi-GZi">
+                                <rect key="frame" x="170" y="622" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="m40-zn-Uxu" kind="unwind" unwindAction="didUnwindFromCatEntry:" id="6ME-2q-brT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MS-qJ-SLL" firstAttribute="leading" secondItem="TNM-bo-Fqc" secondAttribute="leading" constant="15" id="0dh-8U-nxm"/>
+                            <constraint firstItem="tNu-Yi-GZi" firstAttribute="centerX" secondItem="4Fj-Rq-3zF" secondAttribute="centerX" id="1hY-nt-Lj6"/>
+                            <constraint firstItem="Eme-Vs-EDK" firstAttribute="top" secondItem="d9M-Dw-LpR" secondAttribute="bottom" constant="20" id="HzE-d1-Cao"/>
+                            <constraint firstItem="4Ro-0M-uD9" firstAttribute="top" secondItem="4Fj-Rq-3zF" secondAttribute="top" id="QQC-Wp-WMI"/>
+                            <constraint firstItem="Eme-Vs-EDK" firstAttribute="centerX" secondItem="4Fj-Rq-3zF" secondAttribute="centerX" id="R64-Pt-sUI"/>
+                            <constraint firstItem="d9M-Dw-LpR" firstAttribute="leading" secondItem="YYt-Va-uYc" secondAttribute="leading" id="TOV-LJ-dcN"/>
+                            <constraint firstItem="TNM-bo-Fqc" firstAttribute="bottom" secondItem="Eme-Vs-EDK" secondAttribute="bottom" constant="50" id="aPq-Uz-yY1"/>
+                            <constraint firstItem="d9M-Dw-LpR" firstAttribute="top" secondItem="YYt-Va-uYc" secondAttribute="bottom" constant="20" id="cY1-Cl-zvO"/>
+                            <constraint firstItem="TNM-bo-Fqc" firstAttribute="bottom" secondItem="tNu-Yi-GZi" secondAttribute="bottom" constant="15" id="fyc-cN-nLj"/>
+                            <constraint firstItem="Eme-Vs-EDK" firstAttribute="leading" secondItem="9MS-qJ-SLL" secondAttribute="leading" id="k2Z-xk-2SM"/>
+                            <constraint firstItem="O0K-t3-fr2" firstAttribute="top" secondItem="YYt-Va-uYc" secondAttribute="bottom" constant="25" id="rVW-is-BS2"/>
+                            <constraint firstItem="4Ro-0M-uD9" firstAttribute="trailing" secondItem="TNM-bo-Fqc" secondAttribute="trailing" id="tWo-lh-Cjo"/>
+                            <constraint firstItem="YYt-Va-uYc" firstAttribute="top" secondItem="9MS-qJ-SLL" secondAttribute="bottom" constant="5" id="tqu-ZV-V5P"/>
+                            <constraint firstItem="9MS-qJ-SLL" firstAttribute="top" secondItem="4Ro-0M-uD9" secondAttribute="bottom" constant="30" id="vnw-VS-uOV"/>
+                            <constraint firstItem="4Ro-0M-uD9" firstAttribute="leading" secondItem="TNM-bo-Fqc" secondAttribute="leading" id="xKI-Qe-ics"/>
+                            <constraint firstItem="O0K-t3-fr2" firstAttribute="leading" secondItem="d9M-Dw-LpR" secondAttribute="trailing" constant="10" id="xsR-e5-YKU"/>
+                            <constraint firstItem="YYt-Va-uYc" firstAttribute="leading" secondItem="9MS-qJ-SLL" secondAttribute="leading" id="ybk-mI-6rb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TNM-bo-Fqc"/>
+                    </view>
+                    <connections>
+                        <outlet property="address" destination="O0K-t3-fr2" id="R37-8M-88O"/>
+                        <outlet property="cat" destination="YYt-Va-uYc" id="85E-p8-cv4"/>
+                        <outlet property="descr" destination="Eme-Vs-EDK" id="nKa-S3-lOd"/>
+                        <outlet property="entrytitle" destination="9MS-qJ-SLL" id="yQe-oW-bzb"/>
+                        <outlet property="image" destination="4Ro-0M-uD9" id="ff1-pc-XRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVY-PX-oZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m40-zn-Uxu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="253.59999999999999" y="273.91304347826087"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pin" width="38" height="47"/>
+    </resources>
+</document>
