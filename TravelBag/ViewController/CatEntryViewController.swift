@@ -20,8 +20,6 @@ class CatEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cat.text = "Categorie"
-        print(catEntry.title)
         entrytitle.text = catEntry.title
         image.image = UIImage(data: catEntry.image! as Data)
         

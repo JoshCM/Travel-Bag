@@ -22,7 +22,8 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     let context = AppDelegate.viewContext
     var imageChanged:Bool = false
     var activity,food,sight,housing:Category!
-    var chosenCat:CatEntry?
+    var chosenCatEnt:CatEntry?
+    var chosenCat:String?
     
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var countryName: UILabel!
@@ -140,8 +141,9 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
        }
         else if segue.identifier == "CatSegue"{
             let dest = segue.destination as! CatEntryViewController
-            print(chosenCat!.title)
-            dest.catEntry = self.chosenCat!
+            
+            dest.catEntry = self.chosenCatEnt!
+            dest.cat.text = chosenCat
         }
     }
     
@@ -211,8 +213,21 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
-        self.chosenCat = cell.catEntry
-        print(chosenCat!.title)
+        self.chosenCatEnt = cell.catEntry
+        
+        switch collectionView {
+        case self.activityCollectionView:
+            self.chosenCat = "Activity"
+        case self.foodCollectionView:
+            self.chosenCat = "Food"
+        case self.housingCollectionView:
+            self.chosenCat = "Housing"
+        case self.sightCollectionView:
+            self.chosenCat = "Sight"
+        default:
+            self.chosenCat = "Categorie"
+        }
+        
         performSegue(withIdentifier: "CatSegue", sender: self)
         
     }

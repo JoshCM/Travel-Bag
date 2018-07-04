@@ -74,6 +74,7 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
     
 
     @IBAction func didUnwindFromEditEntry(_ sender: UIStoryboardSegue){
+        tableView.reloadData()
     }
     
     
