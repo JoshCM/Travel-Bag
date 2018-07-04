@@ -8,27 +8,44 @@
 
 import UIKit
 import CoreData
+import AudioToolbox
 
 class CityTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+    
     var cities:[CityEntry]!
+    var shakeState = ["Date", "City", "Country"]
+    var shakeIndex = 0
     let context = AppDelegate.viewContext
     @IBOutlet weak var tableView: UITableView!
     var actCell: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCityEntries()
+        loadCityEntries(sortedby: "Date")
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         // Do any additional setup after loading the view.
     }
     
-    private func loadCityEntries(){
+    private func loadCityEntries(sortedby:String){
         let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
+        let sortdiscriptor:NSSortDescriptor
+        switch sortedby {
+        case "Date":
+            break
+        case "Country":
+            sortdiscriptor = NSSortDescriptor(key: "country", ascending: false)
+            fetchRequest.sortDescriptors = [sortdiscriptor]
+        case "City":
+            sortdiscriptor = NSSortDescriptor(key: "name", ascending: false)
+            fetchRequest.sortDescriptors = [sortdiscriptor]
+        default:
+            break
+        }
         do{
             try cities = context.fetch(fetchRequest) as [CityEntry]
+            cities.reverse()
         }catch{
             fatalError("Laden hat nicht so geklappt")
         }
@@ -68,21 +85,28 @@ class CityTableViewController: UIViewController, UITableViewDataSource, UITableV
             if cities[self.actCell].image != nil {
                 evc?.image = UIImage(data: cities[self.actCell].image! as Data)
             }
-
+            
         }
     }
     
-
+    
     @IBAction func didUnwindFromEditEntry(_ sender: UIStoryboardSegue){
         tableView.reloadData()
     }
     
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        shakeIndex = (shakeIndex+1)%3
+        loadCityEntries(sortedby: shakeState[shakeIndex])
+        print("Device was shaken! Sorted by ",shakeState[shakeIndex])
+        tableView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 
