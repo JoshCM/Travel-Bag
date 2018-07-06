@@ -130,9 +130,13 @@
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfN-Ze-PAj">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="128"/>
+                                                                                    <gestureRecognizers/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <color key="textColor" red="0.0" green="0.36706761199999999" blue="0.37407085890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <connections>
+                                                                                        <outletCollection property="gestureRecognizers" destination="ARf-mB-fc5" appends="YES" id="Atz-he-nyK"/>
+                                                                                    </connections>
                                                                                 </label>
                                                                             </subviews>
                                                                         </view>
@@ -497,6 +501,11 @@
                         <action selector="imageTapped:" destination="GeQ-0T-nss" id="BKH-XE-LWV"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ARf-mB-fc5">
+                    <connections>
+                        <action selector="longPressedOnCollection:" destination="GeQ-0T-nss" id="Ur0-DF-j4M"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="370.39999999999998" y="17.991004497751124"/>
         </scene>

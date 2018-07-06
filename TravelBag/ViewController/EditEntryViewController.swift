@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate,UICollectionViewDataSource{
+class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate,UICollectionViewDataSource, UITextViewDelegate{
     
     var city: String = ""
     var country: String = ""
@@ -41,10 +41,28 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var sightCollectionView: UICollectionView!
     @IBOutlet weak var activityCollectionView: UICollectionView!
     
+    @IBAction func longPressedOnCollection(_ gesture: UILongPressGestureRecognizer) {
+        print("long press")
+        
+        if gesture.state != .ended {
+            return
+        }
+        let p = gesture.location(in: self.foodCollectionView)
+        
+        if let indexPath = self.foodCollectionView.indexPathForItem(at: p) {
+            // get the cell at indexPath (the one you long pressed)
+            let cell = self.foodCollectionView.cellForItem(at: indexPath)
+            print("Klicked on: ",indexPath)
+            // do stuff with the cell
+        } else {
+            print("couldn't find index path")
+        }
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         self.hideKeyboardWhenTappedArround()
-        
+        descriptionField.delegate = self
         
         foodView.isHidden = true
         sightsView.isHidden = true
@@ -76,12 +94,17 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         catch {
             print ("fetch task failed", error)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView){
+        if textView.text == "Description"{
+            textView.text = ""
+        }
     }
     
     @IBAction func editButton(_ sender: UIButton) {
@@ -131,7 +154,6 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func didUnwindFromCatEntry(_ sender:UIStoryboardSegue){
-        
     }
     
     @IBAction func addCatEntry(_ sender: UIButton) {
@@ -262,4 +284,3 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
 }
-

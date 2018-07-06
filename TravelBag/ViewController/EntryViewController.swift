@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextViewDelegate {
 
     var imagePicker = UIImagePickerController()
     @IBOutlet weak var cityName: UILabel!
@@ -27,6 +27,7 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionField.text = "Description"
+        descriptionField.delegate = self
         cityName.text = city.uppercased()
         countryName.text = country
         imagePicker.delegate = self
@@ -42,8 +43,12 @@ class EntryViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         imageChanged = true
         imageView.contentMode = .scaleAspectFill
         dismiss(animated: true, completion: nil)
-            
-        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView){
+        if textView.text == "Description"{
+            textView.text = ""
+        }
     }
     
     @IBAction func saveEntry(_ sender: Any) {
