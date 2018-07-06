@@ -25,9 +25,13 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     var chosenCatEnt:CatEntry?
     var chosenCat:String?
     
+    @IBOutlet weak var foodView: UIView!
+    @IBOutlet weak var sightsView: UIView!
+    @IBOutlet weak var housingView: UIView!
+    @IBOutlet weak var activitiesView: UIView!
+    
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var countryName: UILabel!
-    
     @IBOutlet weak var descriptionField: UITextView!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -37,12 +41,17 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var sightCollectionView: UICollectionView!
     @IBOutlet weak var activityCollectionView: UICollectionView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedArround()
         
+        
+        foodView.isHidden = true
+        sightsView.isHidden = true
+        housingView.isHidden = true
+        activitiesView.isHidden = true
         
         cityName.text = city.uppercased()
-        
         countryName.text = country
         imagePicker.delegate = self
         tap = UITapGestureRecognizer(target: self, action:#selector(handleImageTaped(_sender:)))
@@ -68,13 +77,6 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
             print ("fetch task failed", error)
         }
         
-        
-        
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +90,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
             descriptionField.isEditable = true
             imageView.addGestureRecognizer(self.tap!)
             sender.setTitle("Save", for: .normal)
+            sender.setImage(UIImage(named: "save_btn"), for: .normal)
         }else{
             descriptionField.isSelectable = false
             descriptionField.isEditable = false
@@ -98,10 +101,8 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
             }
             try? context.save()
             sender.setTitle("Edit", for: .normal)
+            sender.setImage(UIImage(named:"edit_btn"), for: .normal)
         }
-        
-        
-        
     }
     
     @objc func handleImageTaped(_sender:UITapGestureRecognizer){
@@ -182,14 +183,40 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
+    func checkContentCats(acts:[CatEntry] ,food:[CatEntry], house:[CatEntry], sight:[CatEntry]){
+        if acts.count == 0{
+            activitiesView.isHidden = true
+        }else{
+            activitiesView.isHidden = false
+        }
+        
+        if food.count == 0{
+            foodView.isHidden = true
+        }else{
+            foodView.isHidden = false
+        }
+        
+        if house.count == 0{
+            housingView.isHidden = true
+        }else{
+            housingView.isHidden = false
+        }
+        
+        if sight.count == 0{
+            sightsView.isHidden = true
+        }else{
+            sightsView.isHidden = false
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         let acts:[CatEntry] = self.activity.catent?.allObjects as! [CatEntry]
         let food:[CatEntry] = self.food.catent?.allObjects as! [CatEntry]
         let house:[CatEntry] = self.housing.catent?.allObjects as! [CatEntry]
         let sight:[CatEntry] = self.sight.catent?.allObjects as! [CatEntry]
-        
-        
+       
+        checkContentCats(acts:acts,food:food,house:house,sight:sight)
         
         switch collectionView {
         case self.activityCollectionView:
@@ -234,5 +261,5 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         performSegue(withIdentifier: "CatSegue", sender: self)
         
     }
-    
 }
+

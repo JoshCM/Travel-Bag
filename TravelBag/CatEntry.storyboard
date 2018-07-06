@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27M-ge-LLW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27M-ge-LLW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,9 +56,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNu-Yi-GZi">
-                                <rect key="frame" x="170" y="622" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNu-Yi-GZi">
+                                <rect key="frame" x="15" y="615" width="30" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tNu-Yi-GZi" secondAttribute="height" multiplier="67:60" id="OVL-YJ-UiT"/>
+                                    <constraint firstAttribute="width" constant="30" id="fn5-cZ-y7V"/>
+                                </constraints>
+                                <state key="normal" title="Back" image="cancel_btn"/>
                                 <connections>
                                     <segue destination="m40-zn-Uxu" kind="unwind" unwindAction="didUnwindFromCatEntry:" id="6ME-2q-brT"/>
                                 </connections>
@@ -67,14 +71,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9MS-qJ-SLL" firstAttribute="leading" secondItem="TNM-bo-Fqc" secondAttribute="leading" constant="15" id="0dh-8U-nxm"/>
-                            <constraint firstItem="tNu-Yi-GZi" firstAttribute="centerX" secondItem="4Fj-Rq-3zF" secondAttribute="centerX" id="1hY-nt-Lj6"/>
+                            <constraint firstItem="TNM-bo-Fqc" firstAttribute="bottom" secondItem="tNu-Yi-GZi" secondAttribute="bottom" constant="25" id="Fu2-wD-IoT"/>
                             <constraint firstItem="Eme-Vs-EDK" firstAttribute="top" secondItem="d9M-Dw-LpR" secondAttribute="bottom" constant="20" id="HzE-d1-Cao"/>
+                            <constraint firstItem="Eme-Vs-EDK" firstAttribute="centerX" secondItem="4Fj-Rq-3zF" secondAttribute="centerX" id="MmD-tE-WHs"/>
                             <constraint firstItem="4Ro-0M-uD9" firstAttribute="top" secondItem="4Fj-Rq-3zF" secondAttribute="top" id="QQC-Wp-WMI"/>
-                            <constraint firstItem="Eme-Vs-EDK" firstAttribute="centerX" secondItem="4Fj-Rq-3zF" secondAttribute="centerX" id="R64-Pt-sUI"/>
                             <constraint firstItem="d9M-Dw-LpR" firstAttribute="leading" secondItem="YYt-Va-uYc" secondAttribute="leading" id="TOV-LJ-dcN"/>
+                            <constraint firstItem="tNu-Yi-GZi" firstAttribute="leading" secondItem="TNM-bo-Fqc" secondAttribute="leading" constant="15" id="a7N-yz-sam"/>
                             <constraint firstItem="TNM-bo-Fqc" firstAttribute="bottom" secondItem="Eme-Vs-EDK" secondAttribute="bottom" constant="50" id="aPq-Uz-yY1"/>
                             <constraint firstItem="d9M-Dw-LpR" firstAttribute="top" secondItem="YYt-Va-uYc" secondAttribute="bottom" constant="20" id="cY1-Cl-zvO"/>
-                            <constraint firstItem="TNM-bo-Fqc" firstAttribute="bottom" secondItem="tNu-Yi-GZi" secondAttribute="bottom" constant="15" id="fyc-cN-nLj"/>
                             <constraint firstItem="Eme-Vs-EDK" firstAttribute="leading" secondItem="9MS-qJ-SLL" secondAttribute="leading" id="k2Z-xk-2SM"/>
                             <constraint firstItem="O0K-t3-fr2" firstAttribute="top" secondItem="YYt-Va-uYc" secondAttribute="bottom" constant="25" id="rVW-is-BS2"/>
                             <constraint firstItem="4Ro-0M-uD9" firstAttribute="trailing" secondItem="TNM-bo-Fqc" secondAttribute="trailing" id="tWo-lh-Cjo"/>
@@ -101,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cancel_btn" width="362" height="360"/>
         <image name="pin" width="38" height="47"/>
     </resources>
 </document>
