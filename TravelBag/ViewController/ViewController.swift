@@ -97,6 +97,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedArround()
         //deleteEntriesCoreData()
         mapView.isRotateEnabled = false
         searchField.delegate = self
@@ -159,6 +160,18 @@ extension ViewController:UITextFieldDelegate{
         centerMaponLocation(location: actLoc)
         
         return true
+    }
+}
+
+extension UIViewController{
+    func hideKeyboardWhenTappedArround(){
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
 }
 

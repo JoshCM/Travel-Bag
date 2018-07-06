@@ -10,6 +10,7 @@ import UIKit
 
 class CatEntryViewController: UIViewController {
     var catEntry:CatEntry!
+    var catString:String!
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var entrytitle: UILabel!
@@ -21,6 +22,7 @@ class CatEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         entrytitle.text = catEntry.title
+        cat.text = catString
         image.image = UIImage(data: catEntry.image! as Data)
         
         if let dis = catEntry.descript{

@@ -29,6 +29,7 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedArround()
         let pickerView = UIPickerView()
         pickerView.delegate = self
         imagePicker.delegate = self

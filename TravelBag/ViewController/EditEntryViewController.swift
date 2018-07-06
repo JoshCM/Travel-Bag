@@ -1,4 +1,4 @@
-//
+	//
 //  EditEntryViewController.swift
 //  TravelBag
 //
@@ -39,7 +39,10 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         cityName.text = city.uppercased()
+        
         countryName.text = country
         imagePicker.delegate = self
         tap = UITapGestureRecognizer(target: self, action:#selector(handleImageTaped(_sender:)))
@@ -143,7 +146,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
             let dest = segue.destination as! CatEntryViewController
             
             dest.catEntry = self.chosenCatEnt!
-            dest.cat.text = chosenCat
+            dest.catString = self.chosenCat!
         }
     }
     
