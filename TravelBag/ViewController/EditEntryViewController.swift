@@ -102,7 +102,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func textViewDidBeginEditing(_ textView: UITextView){
-        if textView.text == "Description"{
+            if textView.text == "Description"{
             textView.text = ""
         }
     }

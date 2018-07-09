@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     let cats = ["Food","Sight","Housing", "Activity"]
     var cityCoreData:CityEntry?
@@ -19,17 +19,23 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet weak var pickerTextField: UITextField!
     
-    @IBOutlet weak var descriptionText: UITextField!
+    @IBOutlet weak var descriptionText: UITextView!
     
     @IBOutlet weak var addressText: UITextView!
     
     @IBOutlet weak var catImage: UIImageView!
     
     @IBOutlet weak var titleText: UITextField!
+    
     @IBOutlet weak var saveButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedArround()
+        
+        descriptionText.delegate = self
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         imagePicker.delegate = self
@@ -40,6 +46,7 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         addressText.layer.borderWidth = 0.5
         addressText.layer.borderColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.1).cgColor
         addressText.layer.cornerRadius = 5
+        
         
     }
     
@@ -84,6 +91,14 @@ class NewCatEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
                 titleText.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.1)
             }
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.view.transform = CGAffineTransform(translationX: 0, y: -200)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.view.transform = CGAffineTransform(translationX: 0, y: 0)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
