@@ -94,6 +94,13 @@
                                     <outletCollection property="gestureRecognizers" destination="ICr-Kk-ofA" appends="YES" id="cq3-nT-B0F"/>
                                 </connections>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TQt-eE-wfx">
+                                <rect key="frame" x="37" y="795" width="300" height="2"/>
+                                <color key="backgroundColor" red="0.44870564928301426" green="1" blue="0.35303640056047636" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="v7Z-Vs-ce3"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -101,10 +108,12 @@
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ri-Jp-Jtx"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Mb-Td-JPl"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="96K-PU-Ib3"/>
+                            <constraint firstItem="TQt-eE-wfx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Af6-JD-LXK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PbM-up-XfD" secondAttribute="trailing" constant="50" id="Enp-ll-KCo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PbM-up-XfD" secondAttribute="bottom" constant="590" id="Gs8-8l-W0n"/>
                             <constraint firstItem="yMZ-bD-ctf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="564" id="J2D-wl-ohC"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MXn-E5-f3x"/>
+                            <constraint firstAttribute="bottom" secondItem="TQt-eE-wfx" secondAttribute="bottom" constant="15" id="PW4-PM-IAV"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QtN-PW-Dqr"/>
                             <constraint firstItem="1vD-lX-sAo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VJi-qw-GFB"/>
                             <constraint firstItem="PbM-up-XfD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b7m-ss-Dty"/>
@@ -121,6 +130,7 @@
                         <outlet property="addButton" destination="F4A-9G-xyC" id="fgt-T6-ElC"/>
                         <outlet property="mapView" destination="1vD-lX-sAo" id="lXO-kr-agC"/>
                         <outlet property="panView" destination="yMZ-bD-ctf" id="Wq8-nZ-nHH"/>
+                        <outlet property="progressView" destination="TQt-eE-wfx" id="EIo-2c-NnJ"/>
                         <outlet property="searchField" destination="RN2-EU-59a" id="Lm1-ij-DbU"/>
                         <segue destination="QPQ-NU-RDv" kind="show" identifier="addEntry" id="Qpa-5b-dea"/>
                         <segue destination="DMm-3n-pXo" kind="show" identifier="cityTable" customClass="SwipeUpSegue" customModule="TravelBag" customModuleProvider="target" id="HzV-qv-wzH"/>

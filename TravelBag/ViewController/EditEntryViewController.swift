@@ -41,23 +41,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var sightCollectionView: UICollectionView!
     @IBOutlet weak var activityCollectionView: UICollectionView!
     
-    @IBAction func longPressedOnCollection(_ gesture: UILongPressGestureRecognizer) {
-        print("long press")
-        
-        if gesture.state != .ended {
-            return
-        }
-        let p = gesture.location(in: self.foodCollectionView)
-        
-        if let indexPath = self.foodCollectionView.indexPathForItem(at: p) {
-            // get the cell at indexPath (the one you long pressed)
-            let cell = self.foodCollectionView.cellForItem(at: indexPath)
-            print("Klicked on: ",indexPath)
-            // do stuff with the cell
-        } else {
-            print("couldn't find index path")
-        }
-    }
+
     
     override func viewDidLoad(){
         super.viewDidLoad()

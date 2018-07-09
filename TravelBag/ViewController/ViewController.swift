@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     let initialZoom:CLLocationDistance! = 1000000
     var regionRadius :CLLocationDistance?
     let initLoc = CLLocation(latitude: 50.095845, longitude:8.218644)
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
     var actCity: String!
     let context = AppDelegate.viewContext
     let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
+    var countrySet = Set<String>()
     
     func centerMaponLocation(location:CLLocation){
         let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius!, regionRadius!)
@@ -57,12 +60,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func didUnwindFromEntry(_ sender: UIStoryboardSegue){
-            let origin = sender.source as! EntryViewController
-            
-            let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
-            mapView.register(CostumPin.self,
+        let origin = sender.source as! EntryViewController
+        
+        let marker = Marker(locationName: origin.city, coordinate: CLLocationCoordinate2D(latitude: origin.latitude, longitude: origin.longitude))
+        mapView.register(CostumPin.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-            mapView.addAnnotation(marker)
+        mapView.addAnnotation(marker)
+        countrySet.insert(origin.country)
+        progressView.progress = Float(self.countrySet.count) / 194.0
+        print(progressView.progress)
+        
+        
     }
     
     @IBAction func didUnwindFromEntryCancel(_ sender: UIStoryboardSegue){
@@ -99,6 +107,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedArround()
         //deleteEntriesCoreData()
+        progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
         mapView.isRotateEnabled = false
         searchField.delegate = self
         addButton.isEnabled = false
@@ -118,11 +127,15 @@ class ViewController: UIViewController {
             let cityEntries = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [CityEntry]
             
             for entry in cityEntries{
+                self.countrySet.insert(entry.country!)
                 let marker = Marker(locationName: entry.name!,coordinate: CLLocationCoordinate2D(latitude: entry.latitude,longitude: entry.longitude))
                 mapView.register(CostumPin.self,
                                  forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
                 mapView.addAnnotation(marker)
             }
+            
+            progressView.progress = Float(self.countrySet.count) / 194.0
+            print(progressView.progress)
         }catch{
             print("failed fetch request")
         }
