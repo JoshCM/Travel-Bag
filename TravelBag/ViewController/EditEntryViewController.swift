@@ -41,8 +41,6 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var sightCollectionView: UICollectionView!
     @IBOutlet weak var activityCollectionView: UICollectionView!
     
-
-    
     override func viewDidLoad(){
         super.viewDidLoad()
         self.hideKeyboardWhenTappedArround()
@@ -52,7 +50,7 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         sightsView.isHidden = true
         housingView.isHidden = true
         activitiesView.isHidden = true
-        
+   
         cityName.text = city.uppercased()
         countryName.text = country
         imagePicker.delegate = self

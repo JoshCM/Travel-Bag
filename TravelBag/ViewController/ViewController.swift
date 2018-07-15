@@ -95,8 +95,12 @@ class ViewController: UIViewController {
         if segue.destination is EntryViewController
         {
             let evc = segue.destination as? EntryViewController
+            if(actCity != nil){
+                 evc?.city = actCity
+            }else{
+                evc?.city = actCountry
+            }
             evc?.country = actCountry
-            evc?.city = actCity
             evc?.latitude = actLoc.coordinate.latitude 
             evc?.longitude = actLoc.coordinate.longitude 
         }
@@ -122,7 +126,6 @@ class ViewController: UIViewController {
     }
     
     func loadCities(){
-        
         do{
             let cityEntries = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [CityEntry]
             

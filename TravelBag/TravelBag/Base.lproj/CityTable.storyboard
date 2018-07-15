@@ -10,14 +10,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="JosefinSans-Bold.ttf">
-            <string>JosefinSans-Bold</string>
-        </array>
-        <array key="JosefinSans-SemiBold.ttf">
-            <string>JosefinSans-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--City Table View Controller-->
         <scene sceneID="hEN-cD-T6B">
@@ -46,11 +38,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdB-0Q-yZJ">
-                                                    <rect key="frame" x="15" y="156" width="54" height="35"/>
+                                                    <rect key="frame" x="15" y="156" width="49" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="rSF-cP-l78"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.29846063150000002" blue="0.30415493249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -62,14 +54,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15N-3R-AI2">
-                                                    <rect key="frame" x="75" y="154" width="10" height="30"/>
+                                                    <rect key="frame" x="70" y="154" width="10" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <color key="textColor" red="0.95512676870000002" green="0.9414153663" blue="0.0060321975810000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kc-mX-VcL">
-                                                    <rect key="frame" x="91" y="164" width="44.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="JosefinSans-SemiBold" family="Josefin Sans" pointSize="18"/>
+                                                    <rect key="frame" x="86" y="164" width="39.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.36706761199999999" blue="0.37407085890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

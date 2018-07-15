@@ -564,7 +564,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7MQD5RVV4;
+				DEVELOPMENT_TEAM = 56QSS4SN4R;
 				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;
@@ -581,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7MQD5RVV4;
+				DEVELOPMENT_TEAM = 56QSS4SN4R;
 				INFOPLIST_FILE = "$(SRCROOT)/TravelBag/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.hsrm.gruppe4.TravelBag;
