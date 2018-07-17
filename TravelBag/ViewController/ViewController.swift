@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     let context = AppDelegate.viewContext
     let fetchRequest:NSFetchRequest = CityEntry.fetchRequest()
     var countrySet = Set<String>()
+    var citySet = Set<String>()
     
     func centerMaponLocation(location:CLLocation){
         let coordRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius!, regionRadius!)
@@ -67,8 +68,8 @@ class ViewController: UIViewController {
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotation(marker)
         countrySet.insert(origin.country)
+        citySet.insert(origin.city.uppercased())
         progressView.progress = Float(self.countrySet.count) / 194.0
-        print(progressView.progress)
         
         
     }
@@ -87,6 +88,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addEntryButton(_ sender: Any) {
+        
+        if citySet.contains(actCity.uppercased()){
+            return
+        }
         performSegue(withIdentifier: "addEntry", sender: nil)
     }
     
@@ -131,6 +136,7 @@ class ViewController: UIViewController {
             
             for entry in cityEntries{
                 self.countrySet.insert(entry.country!)
+                    self.citySet.insert(entry.name!)
                 let marker = Marker(locationName: entry.name!,coordinate: CLLocationCoordinate2D(latitude: entry.latitude,longitude: entry.longitude))
                 mapView.register(CostumPin.self,
                                  forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
